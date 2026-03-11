@@ -18,6 +18,20 @@ class Person:
         self.height = height
         self.nationality = nationality
         self.occupation = occupation
+        self.calories = 2000
+        self.fatigue = 100
+        self.relations = {
+            "Self" : self,
+            "Friend" : [],
+            "Mother" : [],
+            "Father" : [],
+            "Sister" : [],
+            "Brother" : [],
+            "Wife" : [],
+            "Husband" : [],
+            "Girlfriend" : [],
+            "Boyfriend" : []
+        }
 
     def greet(self) -> None:
         """Do a simple greeting and introduction."""
@@ -31,6 +45,8 @@ class Person:
             flush: bool = False) -> None:
         """Say a word, phrase, sentence or paragraph."""
         print(*args, sep=sep, end=end, file=file, flush=flush)
+
+        self.saturation -= 1
 
     def introduce(self) -> None:
         """Print a full self-introduction using the person's attributes."""
@@ -46,4 +62,20 @@ class Person:
         if self.occupation is not None:
             intro += f" I work as a {self.occupation}."
         self.say(intro)
+
+    def eat(self,calories) -> None:
+        """ Increase the number of calories by eating food. """
+        self.calories = min(self.calories+calories , 2000)
+
+    def sleep(self) -> None:
+        """ Resting gets rid of the fatigue. """
+        self.fatigue = 100
+
+    def add_relation(self, Person, Relation):
+        """ Relationships between people. """
+        if Relation in self.relations:
+            self.relations[Relation].append(Person)
+        else:
+            self.relations[Relation] = [Person]
+
     
