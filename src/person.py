@@ -74,7 +74,7 @@ class Person:
 
         Raises:
             AttributeError: If the celebration day attribute does not exist.
-            TypeError: If the celebration date attribute is not a datetime or
+            TypeError: If the celebration date attribute is not a date or
                        is None.
         """
         if not isinstance(day, str):
