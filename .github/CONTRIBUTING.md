@@ -15,13 +15,16 @@ these Contribution Guidelines.
 
 ## 📝 Table of Contents
 
-- [Contributions You Can Make](#-contributions-you-can-make)
-- [Pull Request Steps](#-pull-request-steps)
-- [Task Issues](#-task-issues)
-- [Making Your First Contribution](#-making-your-first-contribution)
-- [Code Guidelines](#-code-guidelines)
-- [Reporting a Bug](#-reporting-a-bug)
-- [Suggesting a Feature](#-suggesting-a-feature)
+- [✨ Contributions You Can Make](#-contributions-you-can-make)
+- [🚦 Opening Issues](#-opening-issues)
+  - [🐛 Reporting Bugs](#-reporting-bugs)
+  - [☝️ Suggesting Features](#-suggesting-features)
+- [🧭 Pull Request Guidelines](#-pull-request-guidelines)
+  - [⚠️ THINGS TO KEEP IN MIND](#-things-to-keep-in-mind)
+- [📋 Task Issues](#-task-issues)
+- [🧑‍💻 Code Guidelines](#-code-guidelines)
+- [🤖 AI-Assisted Contributions](#-ai-assisted-contributions)
+- [🧰 Making Your First Contribution](#-making-your-first-contribution)
 
 ---
 
@@ -32,10 +35,47 @@ finding and reporting bugs, improving documentation, and more!
 
 Any addition to the project will be very much appreciated, even small ones.
 
-## 👣 Pull Request Steps
+---
 
-(NOTE: Read "[Suggesting a Feature](#-suggesting-a-feature)" first if you 
-plan on adding an enhancement to the project)
+## 🚦 Opening Issues
+
+**We highly recommend [opening an issue][repo-issues]** before creating a 
+pull request. This is to ensure all changes are discussed properly (and you 
+don't waste your time creating a PR that ends up getting closed). 
+
+This is also to prevent automatically-generated pull requests created by 
+automated bot accounts that usually come with low effort and minimal engagement.
+
+### 🐛 Reporting Bugs
+
+To report a bug:
+1. On the repository on GitHub, go to the [Issues][repo-issues] tab.
+2. Select "New issue"
+3. **Template selection: Choose "Bug report"**
+4. Describe the issue thoroughly, using the template as a guide
+   - If your issue description severely lacks information, maintainers may 
+     close it.
+5. Submit the issue.
+
+### ☝️ Suggesting Features
+
+To suggest a feature:
+1. On the repository on GitHub, go to the [Issues][repo-issues] tab.
+2. Select "New issue"
+3. **Template selection: Choose "Feature request"**
+4. Describe the feature thoroughly, using the template as a guide
+    - If your issue description severely lacks information, maintainers may 
+      close it.
+5. Submit the issue.
+
+...or add a comment under a [discussion][repo-disc] describing the feature.
+
+---
+
+## 🧭 Pull Request Guidelines
+
+(NOTE: Read "[Opening Issues](#-opening-issues)" first if you plan on adding an 
+enhancement to the project or fixing a bug)
 
 1. Create a fork of [the repository][repo]
 2. Clone the forked repository to your local machine
@@ -72,10 +112,14 @@ and polishes before approval.
 You should receive a notification/email once your changes have been merged 
 onto the main branch of this project.
 
-### ⚠️ THINGS TO KEEP IN MIND:
-- Avoid working directly on `main`; always create a new branch on your fork.
-- To avoid conflicts, always remember to update your local fork (`git pull`) 
-  before working.
+### ⚠️ THINGS TO KEEP IN MIND
+- **Rebase > Merge**: When updating a branch, **always use a rebase** and 
+  resolve conflicts. This is to keep commit history nice and linear. The 
+  only time you should see a merge commit is when your pull request is 
+  merged into upstream `main`.
+- **Avoid working directly on `main`**; always create a new branch on your fork.
+- To avoid **conflicts, always** remember to update your local fork 
+  (`git pull`) before working.
 - If you forgot to update your fork before working, run `git pull --rebase` 
   and resolve conflicts (if any).
   - If you run into any trouble during conflict resolution, or are not sure 
@@ -124,7 +168,7 @@ Other issue-closing keywords you can use:
 * resolves
 * resolved
 
-### Note:
+### Note
 
 Each task issue is labeled with its approximate difficulty level.
 
@@ -132,37 +176,16 @@ To ensure fair distribution of tasks amongst contributors, **please
 try to complete tasks labeled with your level of coding experience only** 
 (everyone should have a chance to contribute)
 
-## 🤖 AI-Assisted Contributions
+## 🧑‍💻 Code Guidelines
 
-In this repository, maintainers are expected to minimize the use of AI and 
-prioritize human interaction; other than in GitHub Actions and assissance in 
-code reviews, all comments, review messages, task issues, and documentation 
-are written by human hands, ensuring any AI assisstance is thoroughly reviewed 
-and understood. We expect the same from contributors and discourage using AI as 
-more than just a tool. (Read our [Code of Conduct][coc])
+Here are **3 rules** you should remember when writing code:
 
-AI tools can be helpful during development, and contributors are allowed to use
-them as **assistive tools**. However, this project does **not accept fully 
-automated or mass-generated contributions**.
+> `1.` Styling matters
 
-Pull requests that appear to be:
-- fully AI-generated,
-- automatically submitted to many repositories,
-- or lacking human oversight
-may be **closed without merging**.
+Writing properly styled and formatted code ensures your code can be easily 
+read and understood by everyone.
 
-If you used AI assistance, please disclose it briefly in your PR description.
-
-## 🧰 Making Your First Contribution
-
-If you're new here or are not familiar with contributing to repositories on 
-GitHub, [here's a repo][first-contribs] with information that might help.
-
-## 🧭 Code Guidelines
-
-Here are **3 rules** we have with writing (Python) code:
-
-> `1.` Try to follow PEP 8 as much as possible
+For Python code, follow [PEP 8][pep-8].
 
 Key things to keep in mind include:
 - **Line lengths** (try to keep line **below 80 characters**; PEP 8 says 79 but 
@@ -195,41 +218,40 @@ never think of.
 Give your code some _personality_. Avoid dull, flavorless code. You can even 
 add a little joke comment if your code starts to look sleep-inducing.
 
----
+## 🤖 AI-Assisted Contributions
 
-## 🐛 Reporting a Bug
+AI tools can be helpful during development, and contributors are allowed to use 
+them as **assistive tools**. However, this project does **not accept fully 
+automated or mass-generated contributions**.
 
-To report a bug:
-1. On the repository on GitHub, go to the [Issues][repo-issues] tab.
-2. Select "New issue"
-3. Template selection: Choose "Bug report"
-4. Describe the issue thoroughly, using the template as a guide
-5. Submit the issue.
+When submitting a pull request:
+- **A human must be responsible** for the work submitted.
+- **You must personally review, understand, and test** any code you submit.
+- AI may be used for **suggestions, debugging help, or small improvements**, 
+  but not for generating entire pull requests automatically.
+- **Bulk or automated PRs created by bots or scripts are not accepted**.
+- Contributors must be able to **explain their changes and respond to review 
+  feedback**.
 
----
+Pull requests and issues that appear to be:
+- fully AI-generated, 
+- automatically submitted to many repositories,
+- or lacking human oversight
+may be **closed without merging**.
 
-## ☝️ Suggesting a Feature
+If you used AI assistance, please disclose it briefly in your PR description.
 
-(We recommend opening a feature request before working on an issue, even if 
-you are confident in your feature.)
+## 🧰 Making Your First Contribution
 
-If:
-- You do not wish to code any features yourself
-- You are not sure/confident about your proposal and are looking for 
-  approval/suggestions...
+If you're new here or are not familiar with contributing to repositories on 
+GitHub, here are some links with information that might help:
 
-...feel free to either open an issue:
-1. On the repository on GitHub, go to the [Issues][repo-issues] tab.
-2. Select "New issue"
-3. Template selection: Choose "Feature request"
-4. Describe the feature thoroughly, using the template as a guide
-5. Submit the issue.
-
-...or add a comment under a [discussion][repo-disc] describing the feature.
+- https://docs.github.com/get-started/exploring-projects-on-github/contributing-to-a-project
+- https://docs.github.com/get-started/exploring-projects-on-github/contributing-to-open-source
+- https://github.com/firstcontributions/first-contributions
 
 [repo]: https://github.com/TheGittyPerson/ThePerson
 [repo-issues]: https://github.com/TheGittyPerson/ThePerson/issues
 [repo-disc]: https://github.com/TheGittyPerson/ThePerson/discussions
 [coc]: /.github/CODE_OF_CONDUCT.md
-[first-contribs]: https://github.com/firstcontributions/first-contributions
 [pep-8]: https://peps.python.org/pep-0008/
