@@ -43,18 +43,17 @@ class Person:
 
     def introduce(self) -> None:
         """Print a full self-introduction using the person's attributes."""
-        intro = f"Hi, my name is {self.name}."
+        self.say(f"Hi, my name is {self.name}.")
         if self.age is not None:
-            intro += f" I am {self.age} years old."
+            self.say(f"I am {self.age} years old.")
         if self.gender is not None:
-            intro += f" I identify as {self.gender}."
+            self.say(f"I identify as {self.gender}.")
         if self.height is not None:
-            intro += f" I am {self.height} meters tall."
+            self.say(f"I am {self.height} meters tall.")
         if self.nationality is not None:
-            intro += f" I am from {self.nationality}."
+            self.say(f"I am from {self.nationality}.")
         if self.occupation is not None:
-            intro += f" I work as a {self.occupation}."
-        self.say(intro)
+            self.say(f"I work as a {self.occupation}.")
 
     def celebrate(self,
                   day: str = "birthday",
