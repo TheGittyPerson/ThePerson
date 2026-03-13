@@ -23,7 +23,7 @@ and a fun activity for experienced devs.
   "hunger levels" to implementing a complex `dream()` system, the only limit is
   your imagination.
 
-Read [CONTRIBUTING.md](.github/CONTRIBUTING.md) to get started.
+Read our [Contribution Guidelines][contrib] to get started.
 
 ## 📋 Completing tasks
 
@@ -34,7 +34,7 @@ are new).
 If you are interested in completing a task: 
 - **Leave a comment requesting assignment under the issue**.
 - Wait for a thumbs-up from a maintainer
-- Give [CONTRIBUTING](.github/CONTRIBUTING.md) a read
+- Give our [Contribution Guidelines][contrib] a read
 - Start coding!
 
 #### Note:
@@ -69,4 +69,6 @@ possible 🙏 (PLEASE 🙏🙏🙏)
 [repo]: https://github.com/TheGittyPerson/ThePerson
 [repo-disc]: https://github.com/TheGittyPerson/ThePerson/discussions
 [repo-issues]: https://github.com/TheGittyPerson/ThePerson/issues
+[contrib]: /.github/CONTRIBUTING.md
+[coc]: /.github/CODE_OF_CONDUCT.md
 [profile]: https://github.com/TheGittyPerson

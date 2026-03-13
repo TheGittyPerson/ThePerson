@@ -9,7 +9,7 @@ This project is purely for entertainment purposes, so do have fun and spill
 your creativity.
 
 If you want to contribute to The Person, I advise you to take your time to read 
-this.
+these Contribution Guidelines.
 
 ---
 
