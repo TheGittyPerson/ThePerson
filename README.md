@@ -42,6 +42,29 @@ Each task issue is labeled with its approximate difficulty level; to ensure
 fair distribution of tasks amongst contributors, **please try to complete tasks 
 labeled with your level of coding experience only**
 
+## 🤖 AI-Assisted Contributions
+
+In this repository, maintainers are expected to minimize the use of AI and 
+prioritize human interaction; other than in GitHub Actions and assissance in 
+code reviews, all comments, review messages, task issues, and documentation 
+are written by human hands, ensuring any AI assisstance is thoroughly reviewed 
+and understood. We expect the same from contributors and discourage using AI as 
+more than just a tool. (Read our [Code of Conduct][coc])
+
+AI tools can be helpful during development, and contributors are allowed to use
+them as **assistive tools**. However, this project does **not accept fully 
+automated or mass-generated contributions**.
+
+Pull requests that appear to be:
+- fully AI-generated,
+- automatically submitted to many repositories,
+- or lacking human oversight
+may be **closed without merging**.
+
+If you used AI assistance, please disclose it briefly in your PR description.
+
+Please read the [Contribution Guidelines][contrib] for more information.
+
 ## 💻 How to use
 
 To try using the project yourself on your computer, follow these steps.

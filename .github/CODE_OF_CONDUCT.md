@@ -31,6 +31,17 @@ Examples of unacceptable behavior by participants include:
 * Other conduct which could reasonably be considered inappropriate in a
   professional setting
 
+### Responsible Use of AI Tools
+
+AI tools may be used to assist development, but contributors must remain 
+responsible for their work. Automated pull requests, mass-generated 
+contributions, or submissions created without meaningful human review are not 
+permitted. All contributors should understand and be able to explain the code 
+they submit.
+
+Maintainers reserve the right to close contributions that appear to be 
+automated or lack human oversight.
+
 ## Our Responsibilities
 
 Project maintainers are responsible for clarifying the standards of acceptable
