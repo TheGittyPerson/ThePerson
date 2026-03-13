@@ -9,6 +9,7 @@ from dataclasses import dataclass, field
 
 from .goals import Goals
 from .mood import Mood
+from .measurement import Measurement
 
 
 @dataclass
@@ -26,7 +27,7 @@ class Profile:
 class Physical:
     """Physical characteristics such as height, weight and appearance."""
 
-    height: float | None = None
+    height: Measurement | None = None
     weight: float | None = None
     skin_tone: str | None = None
     hair_color: str | None = None
@@ -160,7 +161,6 @@ class Person:
             AttributeError: If the celebration day attribute does not exist.
             TypeError: If the celebration date attribute is not a date.
         """
-
         if not isinstance(day, str):
             raise TypeError(f"'day' must be a string, got {type(day).__name__}")
 
@@ -229,3 +229,12 @@ class Person:
         ]
 
         self.say(random.choice(messages))
+    
+    def set_height(self, value: float, unit: str = "meters") -> None:
+        """Set the person's height.
+
+        Args:
+            value: The numeric height value. Must be non-negative.
+            unit: The unit for the height. Defaults to 'meters'.
+        """
+        self.physical.height = Measurement(value, unit)
