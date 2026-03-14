@@ -1,4 +1,4 @@
-Summarize what the feature does/what it's for
+Summarize what the feature does and why it’s needed.
 
 ## How it works
 
@@ -17,8 +17,4 @@ Where the feature can be applied in code or how it can be used.
 (if any)
 
 
-Resolves #InsertIssueNumber
-<!-- 
-  Only if applicable
-  e.g.: Resolves #123 
--->
+Resolves #<issue-number>

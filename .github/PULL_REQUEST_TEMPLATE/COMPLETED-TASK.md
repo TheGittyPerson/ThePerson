@@ -5,5 +5,4 @@ Summarize your changes here.
 - Describe the changes you made in more detail.
 - You may use bullet points
 
-Resolves #InsertTaskNumber
-<!-- e.g.: Resolves #123 -->
+Resolves #<task-issue-number>

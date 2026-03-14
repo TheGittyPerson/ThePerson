@@ -1,6 +1,6 @@
 Summarize your changes here.
 
-## Bug fixed
+## Bug Fixed
 
 Describe the bug/issue you fixed.
 
@@ -10,8 +10,4 @@ Describe the bug/issue you fixed.
 - You may use bullet points
 
 
-Resolves #InsertIssueNumber
-<!-- 
-  Only if applicable
-  e.g.: Resolves #123 
--->
+Resolves #<issue-number>

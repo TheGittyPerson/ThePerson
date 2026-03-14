@@ -45,11 +45,13 @@ labeled with your level of coding experience only**
 ## 🤖 AI-Assisted Contributions
 
 In this repository, maintainers are expected to minimize the use of AI and 
-prioritize human interaction; other than in GitHub Actions and assissance in 
-code reviews, all comments, review messages, task issues, and documentation 
-are written by human hands, ensuring any AI assisstance is thoroughly reviewed 
-and understood. We expect the same from contributors and discourage using AI as 
-more than just a tool. (Read our [Code of Conduct][coc])
+prioritize human interaction; other than in GitHub Actions workflows and 
+assissance in code reviews, all comments, review messages, task issues, and 
+documentation are written by human hands, ensuring any AI assisstance is 
+thoroughly reviewed and understood. 
+
+We expect the same from contributors and 
+discourage using AI as more than just a tool. (Read our [Code of Conduct][coc])
 
 AI tools can be helpful during development, and contributors are allowed to use
 them as **assistive tools**. However, this project does **not accept fully 

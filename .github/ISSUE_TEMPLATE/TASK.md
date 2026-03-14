@@ -18,7 +18,7 @@ labels: ['good first issue', 'help wanted', task]
 4. Push commits to your remote fork
 5. Create a PR titled `TASK: TASKTITLEHERE (#ISSUENUMBERHERE)`
 6. At the end of the PR description, add `Closes #ISSUENUMBERHERE`
-7. Submit the PR (Ensure you enable write access for code owners)
+7. Submit the PR (Ensure you allow maintainers to edit)
 8. _Optional: Request a review from a code owner_
 
 Please make sure you have read the [Contribution Guidelines][contrib] before 

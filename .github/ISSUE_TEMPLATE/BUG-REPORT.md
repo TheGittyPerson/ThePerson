@@ -39,8 +39,6 @@ idea.
 
 ## Alternatives considered
 
-(If you know how to fix the issue)
-
 List alternatives you have considered and why the solution above is the most 
 suitable.
 
@@ -49,4 +47,4 @@ suitable.
 (optional)
 
 Provide information about the environment you ran the code in to get the error.
-Ensure to include the Python version you are working with.
+Ensure you include the Python version you are working with.

@@ -5,11 +5,11 @@
 Thanks for considering contributing to this open-source project! Both beginners 
 and experts are very welcome here.
 
-This project is purely for entertainment purposes, so do have fun and spill 
-your creativity.
+This project is purely for entertainment purposes, so do have fun and let your 
+creativity flow.
 
-If you want to contribute to The Person, I advise you to take your time to read 
-these Contribution Guidelines.
+If you want to contribute to The Person, I recommend you take the time to read 
+these contribution guidelines.
 
 ---
 
@@ -82,19 +82,19 @@ enhancement to the project or fixing a bug)
 3. Create a new branch with a meaningful name (include the type of change 
    followed by a slash; use hierarchical branch naming)
 
-   | Prefix       | Description                                    |
-   |--------------|------------------------------------------------|
-   | `bugfix`     | Bug fix (minor, not urgent)                    |
-   | `hotfix`     | Urgent, critical fix                           |
-   | `feature`    | New feature/functionality                      |
-   | `ui`         | Affects user interface only                    |
-   | `docs`       | Documentation only                             |
-   | `format`     | Formatting fixes                               |
-   | `refact`     | Code improvements that do not affect behaviour |
-   | `wip`        | Work in progress                               |
-   | `experiment` | Temporary, experimental code; playground       |
-   | `mix`        | A combination of different fixes/changes       |
-   | `misc`       | Other (not recommended)                        |
+   | Prefix         | Description                                    |
+   |----------------|------------------------------------------------|
+   | `bugfix`/`fix` | Bug fix (minor, not urgent)                    |
+   | `hotfix`       | Urgent, critical fix                           |
+   | `feature`      | New feature/functionality                      |
+   | `ui`           | Affects user interface only                    |
+   | `docs`         | Documentation only                             |
+   | `format`       | Formatting fixes                               |
+   | `refact`       | Code improvements that do not affect behaviour |
+   | `wip`          | Work in progress                               |
+   | `experiment`   | Temporary, experimental code; playground       |
+   | `mix`          | A combination of different fixes/changes       |
+   | `misc`         | Other (not recommended)                        |
 
    - e.g.) `feature/feature-name`, `fix/issue-12`
    
@@ -110,7 +110,7 @@ We will likely need to discuss the changes you make and apply some tweaks
 and polishes before approval.
 
 You should receive a notification/email once your changes have been merged 
-onto the main branch of this project.
+into the main branch of this project.
 
 ### ⚠️ THINGS TO KEEP IN MIND
 - **Rebase > Merge**: When updating a branch, **always use a rebase** and 
@@ -143,7 +143,7 @@ Some issues will be opened in the [Issues tab][repo-issues] on GitHub, labeled
 5. Start coding!
 
 **When writing the pull request**:
-- Start the title the PR with `TASK: `.
+- Start the PR title with `TASK: `.
 - In your PR description, **ensure you use an issue-closing keyword phrase:**
 
 ```markdown
@@ -188,8 +188,8 @@ read and understood by everyone.
 For Python code, follow [PEP 8][pep-8].
 
 Key things to keep in mind include:
-- **Line lengths** (try to keep line **below 80 characters**; PEP 8 says 79 but 
-  whichever works)
+- **Line lengths** (try to keep lines **below 80 characters**; PEP 8 says 79 but
+  both work)
 - **Naming conventions** (module, variable, class, and function names)
   - `variable_must_be_named_like_this`
   - `functions_too`

@@ -21,6 +21,6 @@ As you learn Python and OOP, keep these security habits in mind:
 
 ## 🛠️ Security Tools
 We use GitHub Dependabot to automatically monitor and update our dependencies 
-for known vulnerabilities
+for known vulnerabilities.
 
 [security]: https://github.com/TheGittyPerson/ThePerson/security
