@@ -238,3 +238,16 @@ class Person:
             unit: The unit for the height. Defaults to 'meters'.
         """
         self.physical.height = Measurement(value, unit)
+
+    def get_height_in(self, unit: str) -> Measurement:
+        """Return the person's height converted into a different unit.
+
+        Args:
+            unit: The target unit for conversion.
+
+        Raises:
+            ValueError: If height has not been set.
+        """
+        if self.physical.height is None:
+            raise ValueError("Height has not been set")
+        return self.physical.height.to_unit(unit)
