@@ -1,26 +1,3 @@
-# src/person.py
-
-class Person:
-    def __init__(self, name):
-        self.name = name
-
-    def wave(self):
-        """Print a waving emoji"""
-        print("👋")
-
-    def cry(self, emoji: str = "😭") -> None:
-        """
-        Print a crying emoji.
-
-        Args:
-            emoji (str, optional): The crying emoji to print. Defaults to "😭".
-        """
-        print(emoji)
-
-    def eat(self):
-        """Print a eating emoji"""
-        print("🍴")
-
 # The Person 🧍
 
 *The Person* is an open-source Python simulation of a person living 
