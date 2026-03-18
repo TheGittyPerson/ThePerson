@@ -62,6 +62,17 @@ class Person:
         """
         print("\U0001f44b")  # Unicode for waving hand emoji
 
+    def smile(self,smile_type:str = "😊") -> None:
+        """Prints a smile emoji.
+        Args: smile_type:The type of smile to display.
+                         options: '🙂', '☺️', '😊', '😁', '😄'            """
+        
+        valid_smiles = ['🙂', '☺️', '😊', '😁', '😄']
+        if smile_type in valid_smiles:
+            print(smile_type)
+        else:
+            print("😊")    
+
     def introduce(self) -> None:
         """Print a full self-introduction using the person's attributes."""
         parts = []
