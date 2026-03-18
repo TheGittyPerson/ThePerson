@@ -21,18 +21,6 @@ class Person:
         """Print a eating emoji"""
         print("🍴")
 
-    def greet(self, target: 'Person' = None) -> None:
-        """
-        Print a greeting message.
-
-        Args:
-            target (Person, optional): The person to greet. Defaults to None.
-        """
-        if target is None:
-            print(f"Hello! My name is {self.name}.")
-        else:
-            print(f"Hello {target.name}! My name is {self.name}.")
-
 # The Person 🧍
 
 *The Person* is an open-source Python simulation of a person living 
