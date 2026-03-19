@@ -84,13 +84,9 @@ class Person:
             "sad": "\U0001f622",     # 😢 crying face
         }
 
-        if emoji_type is None:
-            emoji = random.choice(list(crying_emojis.values()))
-        elif emoji_type in crying_emojis:
-            emoji = crying_emojis[emoji_type]
-        else:
-            # Fallback to random emoji for invalid emoji_type
-            emoji = random.choice(list(crying_emojis.values()))
+        emoji = crying_emojis.get(
+            emoji_type, random.choice(list(crying_emojis.values()))
+        )
 
         print(emoji)
 
