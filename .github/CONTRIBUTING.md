@@ -106,7 +106,7 @@ enhancement to the project or fixing a bug)
    | `wip`            | Work in progress                               |
    | `experiment`     | Temporary, experimental code; playground       |
    | `mix`            | A combination of different fixes/changes       |
-   | `misc`           | Other; miscellaneous (not recommended)         |
+   | `misc`           | Other; miscellaneous                           |
 
    - e.g.) `feature/feature-name`, `fix/issue-12`
    

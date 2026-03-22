@@ -21,7 +21,7 @@ labels: ['good first issue', 'help wanted', task]
 5. Create a PR titled `TASK: TASKTITLEHERE (#ISSUENUMBERHERE)`
 6. At the end of the PR description, add `Closes #ISSUENUMBERHERE`
 7. Submit the PR (Ensure you allow maintainers to edit)
-8. _Optional: Request a review from a code owner_
+8. Request a review from a maintainer
 
 Please make sure you have read the [Contributing Guidelines][contrib] before 
 working.
