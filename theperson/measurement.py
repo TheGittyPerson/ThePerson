@@ -90,7 +90,9 @@ class Measurement:
     def to_unit(self, unit: str) -> "Measurement":
         """Return a converted measurement in the requested unit."""
         normalized_unit = self._normalize_unit(unit)
-        converted_value = self.to_meters() / self.CONVERSION_TO_METERS[normalized_unit]
+        converted_value = (
+            self.to_meters() / self.CONVERSION_TO_METERS[normalized_unit]
+        )
         return Measurement(converted_value, normalized_unit)
 
     def describe(self, precision: int = 2) -> str:
@@ -115,7 +117,8 @@ class Measurement:
         """Compare measurements by their value in meters."""
         if not isinstance(other, Measurement):
             return NotImplemented
-        return isclose(self.to_meters(), other.to_meters(), rel_tol=0.0, abs_tol=1e-9)
+        return isclose(self.to_meters(), other.to_meters(), rel_tol=0.0,
+                       abs_tol=1e-9)
 
     def __lt__(self, other: object) -> bool:
         """Compare whether one measurement is smaller than another."""
@@ -131,7 +134,10 @@ class Measurement:
         return Measurement(self.value + converted_other.value, self.unit)
 
     def __sub__(self, other: object) -> "Measurement":
-        """Subtract one measurement from another using the left operand's unit."""
+        """Subtract one measurement from another
+        
+        Use the left operand's unit.
+        """
         if not isinstance(other, Measurement):
             return NotImplemented
         converted_other = other.to_unit(self.unit)

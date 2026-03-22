@@ -1,4 +1,4 @@
-"""✨ The ultimate centerpiece; contains the Person class."""
+"""✨ The ultimate centerpiece; this module contains the Person class."""
 
 from __future__ import annotations
 
