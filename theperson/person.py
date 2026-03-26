@@ -229,3 +229,36 @@ class Person:
         ]
 
         self.say(random.choice(messages))
+
+    def compliment(self, target: "Person") -> None:
+        """
+        Args:
+            target: The Person object to compliment. Must be an instance of Person.
+
+        Raises:
+            TypeError: If target is not a Person instance.
+        """
+        if not isinstance(target, Person):
+            raise TypeError(f"target must be a Person instance, got {type(target).__name__}")
+
+        name = target.profile.name
+        if name is None:
+            self.say("You are awesome!")
+            return
+
+        compliments = [
+            f"You're amazing, {name}!",
+            f"Great job, {name}!",
+            f"You look fantastic today, {name}!",
+            f"I'm impressed by you, {name}!",
+            f"You have a bright future ahead, {name}!",
+            f"You're one of a kind, {name}!",
+            f"Keep shining, {name}!",
+            f"You're doing great things, {name}!",
+            f"Your smile lights up the room, {name}!",
+            f"You're a star, {name}!",
+            f"I admire your spirit, {name}!",
+        ]
+
+        message = random.choice(compliments)
+        self.say(message)
