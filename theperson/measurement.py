@@ -2,6 +2,8 @@
 
 from __future__ import annotations
 
+from functools import total_ordering
+
 VALID_UNITS = {
     "m": "metres",
     "cm": "centimetres",
@@ -11,6 +13,7 @@ VALID_UNITS = {
 }
 
 
+@total_ordering
 class Measurement:
     """A class to represent a measurement with a value and unit.
 
@@ -30,7 +33,7 @@ class Measurement:
             TypeError: If value is not a number or unit is not a string.
             ValueError: If value is negative or unit is not recognised.
         """
-        if not isinstance(value, (int, float)):
+        if isinstance(value, bool) or not isinstance(value, (int, float)):
             raise TypeError(
                 f"Value must be a number, got {type(value).__name__}."
             )
@@ -109,4 +112,10 @@ class Measurement:
         """Check equality by comparing values in metres."""
         if not isinstance(other, Measurement):
             return NotImplemented
-        return abs(self.to_metres() - other.to_metres()) < 1e-9
+        return self.to_metres() == other.to_metres()
+
+    def __lt__(self, other: object) -> bool:
+        """Check if this measurement is less than another."""
+        if not isinstance(other, Measurement):
+            return NotImplemented
+        return self.to_metres() < other.to_metres()
