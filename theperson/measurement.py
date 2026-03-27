@@ -2,9 +2,11 @@
 
 from __future__ import annotations
 
-from math import isclose
+from decimal import Decimal, ROUND_HALF_UP
+from functools import total_ordering
 
 
+@total_ordering
 class Measurement:
     """A class to represent a measurement with a numeric value and unit.
 
@@ -37,7 +39,9 @@ class Measurement:
         "feet": 0.3048,
         "inches": 0.0254,
     }
-    VALID_UNITS: tuple[str, ...] = tuple(CONVERSION_TO_METERS)
+    VALID_UNITS: tuple[str, ...] = tuple(
+        dict.fromkeys((*CONVERSION_TO_METERS, *UNIT_ALIASES))
+    )
 
     def __init__(self, value: float, unit: str = "meters") -> None:
         """Initialize the measurement.
@@ -50,7 +54,7 @@ class Measurement:
             TypeError: If value is not numeric or unit is not a string.
             ValueError: If value is negative or unit is not recognized.
         """
-        if not isinstance(value, (int, float)):
+        if isinstance(value, bool) or not isinstance(value, (int, float)):
             raise TypeError(
                 f"Measurement value must be numeric, got {type(value).__name__}"
             )
@@ -97,10 +101,19 @@ class Measurement:
 
     def describe(self, precision: int = 2) -> str:
         """Return a human-readable string representation."""
+        if isinstance(precision, bool) or not isinstance(precision, int):
+            raise TypeError(
+                f"Precision must be an integer, got {type(precision).__name__}"
+            )
         if precision < 0:
             raise ValueError(f"Precision must be non-negative, got {precision}")
-        rounded_value = round(self.value, precision)
-        return f"{rounded_value:g} {self.unit}"
+        exponent = Decimal("1").scaleb(-precision)
+        rounded_value = Decimal(str(self.value)).quantize(
+            exponent,
+            rounding=ROUND_HALF_UP,
+        )
+        formatted_value = format(rounded_value, "f").rstrip("0").rstrip(".")
+        return f"{formatted_value or '0'} {self.unit}"
 
     def __repr__(self) -> str:
         """Return a developer-friendly representation."""
@@ -117,8 +130,7 @@ class Measurement:
         """Compare measurements by their value in meters."""
         if not isinstance(other, Measurement):
             return NotImplemented
-        return isclose(self.to_meters(), other.to_meters(), rel_tol=0.0,
-                       abs_tol=1e-9)
+        return self.to_meters() == other.to_meters()
 
     def __lt__(self, other: object) -> bool:
         """Compare whether one measurement is smaller than another."""
