@@ -1,6 +1,8 @@
-# Contributing to this project
+# Contributing Guidelines
 
-## 👋 Hello!
+###### How to Contribute to _ThePerson_
+
+## 👋 Greetings!
 
 Thanks for considering contributing to this open-source project! Both beginners 
 and experts are very welcome here.
@@ -8,8 +10,9 @@ and experts are very welcome here.
 This project is purely for entertainment purposes, so _do_ have fun and let 
 your creativity flow.
 
-If you want to contribute to The Person, I recommend you take the time to read 
-these contributing guidelines, or at least skim through it.
+If you want to contribute to ThePerson, I recommend you take the time to read 
+these contributing guidelines, or at least skim through it to get an idea of 
+how to make good contributions.
 
 ---
 
@@ -24,7 +27,7 @@ these contributing guidelines, or at least skim through it.
   - [⚠️ THINGS TO KEEP IN MIND](#-things-to-keep-in-mind)
 - [📋 Task Issues](#-task-issues)
 - [🧑‍💻 Code Guidelines](#-code-guidelines)
-- [🏡 The Town](#-the-town)
+- [🏡 TheTown](#-thetown)
 - [🤖 AI-Assisted Contributions](#-ai-assisted-contributions)
 - [🧰 Making Your First Contribution](#-making-your-first-contribution)
 
@@ -32,10 +35,22 @@ these contributing guidelines, or at least skim through it.
 
 ## ✨ Contributions You Can Make
 
-There are many ways you can contribute: Adding a feature, fixing code, 
-finding and reporting bugs, improving documentation, and more!
+There are many ways you can contribute: 
+- [Suggesting or adding a feature](#-suggesting-features)
+- [Finding and reporting bugs](#-reporting-bugs)
+- Reformatting, refactoring, or enhancing code
+- Improving documentation
+- [Completing tasks](#-task-issues)
+- [Joining TheTown](#-thetown)
+- [Participating in discussions][repo-disc]
+- Helping to review or give feedback to pull requests or issues
+- Suggesting task issues (by opening a discussion)
+- ...and more!
 
-Any addition to the project will be very much appreciated, even small ones.
+Any addition to the project will be very much appreciated, even small or minor 
+ones.
+
+[^ TOC](#-table-of-contents)
 
 ## 📐 Requirements
 
@@ -46,6 +61,8 @@ Any addition to the project will be very much appreciated, even small ones.
   - Visual Studio
   - Eclipse
   - **NOT** the GitHub web editor or a basic text editor
+
+[^ TOC](#-table-of-contents)
 
 ---
 
@@ -82,6 +99,8 @@ To suggest a feature:
 
 ...or add a comment under a [discussion][repo-disc] describing the feature.
 
+[^ TOC](#-table-of-contents)
+
 ---
 
 ## 🧭 Pull Request Guidelines
@@ -103,6 +122,7 @@ enhancement to the project or fixing a bug)
    | `docs`           | Documentation only                             |
    | `format`/`style` | Formatting fixes                               |
    | `refactor`       | Code improvements that do not affect behaviour |
+   | `test`           | Changes to test files                          |
    | `wip`            | Work in progress                               |
    | `experiment`     | Temporary, experimental code; playground       |
    | `mix`            | A combination of different fixes/changes       |
@@ -116,7 +136,7 @@ enhancement to the project or fixing a bug)
      documentation`
 5. Push commits to GitHub (if you have made changes locally on your machine).
 6. Create and submit a pull request.
-7. Request a review from a maintainer.
+7. Optional: Request a review from a maintainer.
 
 We will likely need to discuss the changes you make and apply some tweaks 
 and polishes before approval.
@@ -141,6 +161,8 @@ into the main branch of this project.
   any work.
 - Minimize how much code you touch outside what you are working on; change 
   only what you are focusing on doing and avoid changing others' code.
+
+[^ TOC](#-table-of-contents)
 
 ## 📋 Task Issues
 
@@ -180,6 +202,9 @@ Other issue-closing keywords you can use:
 * resolves
 * resolved
 
+> Click [HERE][avail-tasks] to see available tasks (link filtered for pinned 
+> tasks or open tasks with no assignees)
+
 ### Note
 
 Each task issue is labeled with its approximate difficulty level.
@@ -188,11 +213,16 @@ To ensure fair distribution of tasks amongst contributors, **please
 try to complete tasks labeled with your level of coding experience only** 
 (everyone should have a chance to contribute).
 
+However, if a task has been left untaken for a long time, feel free to claim 
+the task no matter the labeled difficulty.
+
 #### Regarding the use of AI:
 The purpose of this project is to provide a learning opportunity for growing 
 developers, and using AI to complete [tasks](#-task-issues) defeats this 
 purpose. It is okay to make mistakes when completing tasks — reviewers will 
 be happy to correct them and give feedback.
+
+[^ TOC](#-table-of-contents)
 
 ## 🧑‍💻 Code Guidelines
 
@@ -236,10 +266,12 @@ would never think of.
 Give your code some _personality_. Avoid dull, flavorless code. You can even 
 add a little joke comment if your code starts to look sleep-inducing.
 
-## 🏡 The Town
+[^ TOC](#-table-of-contents)
+
+## 🏡 TheTown
 
 In the root directory of this repo, you will see `the_town.py`. Add yourself 
-as a `Person` instance to be part of the town!
+as a `Person` instance to be part of TheTown!
 
 Pull request steps:
 1. Fork and clone this repository
@@ -260,28 +292,30 @@ added previously.
 - Don't kill your neighbors (Don't remove `Person` instances other than your 
   own)
 
+[^ TOC](#-table-of-contents)
+
 ## 🤖 AI-Assisted Contributions
 
-AI tools can be helpful during development, and contributors are allowed to use 
-them as **assistive tools**. However, this project does **not accept fully 
-automated or mass-generated contributions**.
+AI tools can be helpful during development, and contributors are allowed to use
+them as **assistive tools**. However, this project does **not accept 
+contributions that are noticeably and mostly AI-generated**.
 
 When submitting a pull request:
 - **A human must be responsible** for the work submitted.
 - **You must personally review, understand, and test** any code you submit.
-- AI may be used for **suggestions, debugging help, or small improvements**, 
-  but not for generating entire pull requests automatically.
-- **Bulk or automated PRs created by bots or scripts are not accepted**.
 - Contributors must be able to **explain their changes and respond to review 
   feedback**.
 
-Pull requests and issues that appear to be:
-- fully AI-generated, 
-- automatically submitted to many repositories,
+Pull requests that appear to be:
+- primarily AI-generated,
+- created by a bot/automated account,
 - or lacking human oversight
 may be **closed without merging**.
 
-If you used AI assistance, please disclose it briefly in your PR description.
+Just so you know, it is quite easy to tell AI-generated code apart from 
+human-writen code.
+
+[^ TOC](#-table-of-contents)
 
 ## 🧰 Making Your First Contribution
 
@@ -292,8 +326,11 @@ GitHub, here are some links with information that might help:
 - https://docs.github.com/get-started/exploring-projects-on-github/contributing-to-open-source
 - https://github.com/firstcontributions/first-contributions
 
+[^ TOC](#-table-of-contents)
+
 [repo]: https://github.com/TheGittyPerson/ThePerson
 [repo-issues]: https://github.com/TheGittyPerson/ThePerson/issues
+[avail-tasks]: https://github.com/TheGittyPerson/ThePerson/issues?q=is%3Aissue%20state%3Aopen%20(no%3Aassignee%20OR%20label%3A%22%F0%9F%93%8C%20pinned%22)%20label%3Atask
 [repo-disc]: https://github.com/TheGittyPerson/ThePerson/discussions
 [coc]: /.github/CODE_OF_CONDUCT.md
 [pep-8]: https://peps.python.org/pep-0008/

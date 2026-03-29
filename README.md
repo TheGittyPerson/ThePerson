@@ -15,16 +15,16 @@
 ![Branch Status](https://img.shields.io/github/checks-status/TheGittyPerson/ThePerson/main)
 ![License](https://img.shields.io/github/license/TheGittyPerson/ThePerson)
 
-**The Person is an open-source Python simulation of a person** living 
+**ThePerson is an open-source Python simulation of a person** living 
 inside your computer. It features a central `Person` class that developers 
 can expand with new attributes, behaviors, and quirks.
 
 `theperson/person.py` is the heart of the project. Inside the script is a 
-`Person` class where you can build in. You may add other classes if 
-necessary, but try to keep the main focus on `Person`.
+`Person` class where you can build in. You may add other classes and modules 
+to further expand and improve the project.
 
-Our goal is to simulate a human in Python as closely as possible (and create 
-a super long script) while providing a **learning opportunity** for beginners 
+Our goal is to simulate a human in Python with plenty of features (and create a 
+super long script) while providing a **learning opportunity** for beginners 
 and a fun activity for experienced devs, and **spark imagination and 
 creativity**. We also aim to keep our community safe and engaging for everyone.
 
@@ -38,7 +38,7 @@ creativity**. We also aim to keep our community safe and engaging for everyone.
 - **Infinite Possibilities**: This project is _never_ complete. From tracking 
   "hunger levels" to implementing a complex `dream()` system, the only limit is
   your imagination.
-- **Be Part of The Town**: _The Town_ is a fun little community that anyone 
+- **Be Part of TheTown**: _TheTown_ is a fun little community that anyone 
   can join. Read [the section below](#-be-part-of-the-town) to find out more.
 
 Read our [Contributing Guidelines][contrib] to get started.
@@ -55,18 +55,24 @@ If you are interested in completing a task:
 - Give our [Contributing Guidelines][contrib] a read.
 - Start coding!
 
+> Click [HERE][avail-tasks] to see available tasks (link filtered for pinned 
+> tasks or open tasks with no assignees)
+
 #### Note:
 Each task issue is labeled with its approximate difficulty level; to ensure 
 fair distribution of tasks amongst contributors, **please try to complete tasks 
-labeled with your level of coding experience only**
+labeled with your level of coding experience only**.
 
-## 🏡 Be Part of The Town!
+However, if a task has been left untaken for a long time, feel free to claim 
+the task no matter the labeled difficulty.
+
+## 🏡 Be Part of TheTown!
 
 In the root directory of this repo, you will see `the_town.py`. Add yourself 
 as an instance of `Person`!
 
 Read [CONTRIBUTING](.github/CONTRIBUTING.md) to get started. Any PR not 
-following the guidelines under "The Town" will be closed.
+following the guidelines under "TheTown" will be closed.
 
 ### 📖 Town Laws:
 - Only edit your own code, even if you see a mistake someone made. That's their 
@@ -83,20 +89,23 @@ assistance in code reviews, all comments, review messages, task issues, and
 documentation are written by human hands, ensuring any AI assistance is 
 **thoroughly reviewed and understood**.
 
-We expect the same from contributors and **discourage using AI as more than 
-just a tool**.(Read our [Code of Conduct][coc])
+We expect the same from contributors and **discourage using AI for 
+contributions, especially for writing large amounts of code**.(Read our 
+[Code of Conduct][coc])
 
 AI tools can be helpful during development, and contributors are allowed to use
-them as **assistive tools**. However, this project does **not accept fully 
-automated or mass-generated contributions**.
+them solely as **assistive tools or translators**. However, this project does 
+**not accept contributions that are noticeably AI-generated with minimal 
+human work**.
 
 Pull requests that appear to be:
-- fully AI-generated,
-- automatically submitted to many repositories,
+- primarily AI-generated,
+- created by a bot/automated account,
 - or lacking human oversight
 may be **closed without merging**.
 
-If you used AI assistance, please disclose it briefly in your PR description.
+Just so you know, it is quite easy to tell AI-generated code apart from 
+human-writen code.
 
 Please read the [Contributing Guidelines][contrib] for more information.
 
@@ -151,6 +160,7 @@ If you enjoyed contributing to this project or appreciate the concept, consider
 [repo]: https://github.com/TheGittyPerson/ThePerson
 [repo-disc]: https://github.com/TheGittyPerson/ThePerson/discussions
 [repo-issues]: https://github.com/TheGittyPerson/ThePerson/issues
+[avail-tasks]: https://github.com/TheGittyPerson/ThePerson/issues?q=is%3Aissue%20state%3Aopen%20(no%3Aassignee%20OR%20label%3A%22%F0%9F%93%8C%20pinned%22)%20label%3Atask
 [contrib]: /.github/CONTRIBUTING.md
 [coc]: /.github/CODE_OF_CONDUCT.md
 [profile]: https://github.com/TheGittyPerson

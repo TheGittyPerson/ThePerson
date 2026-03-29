@@ -18,6 +18,9 @@ labels:
   # Refactors
   - label: "refactor"
     title: '^(?:[Rr][Ee][Ff][Aa][Cc][Tt]|[Rr][Ee][Ff][Aa][Cc][Tt][Oo][Rr])(?:\b|:|\s|$)'
+  # Tests
+  - label: "test"
+    title: '^(?:[Tt][Ee][Ss][Tt])(?:\b|:|\s|$)'
   # Work in progress
   - label: "work in progress"
     title: '^(?:[Ww][Ii][Pp])(?:\b|:|\s|$)'

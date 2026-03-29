@@ -3,7 +3,8 @@
 from __future__ import annotations
 
 import random
-from typing import TextIO
+import time
+from typing import Any, Sequence, TextIO
 from datetime import date
 from dataclasses import dataclass, field
 
@@ -229,3 +230,75 @@ class Person:
         ]
 
         self.say(random.choice(messages))
+
+    def do_tasks(self,
+                 tasks: str | list[str],
+                 durations: float | list[float]) -> None:
+        """Work on the given tasks.
+        
+        The number of tasks should match the number of durations provided.
+        Each duration is mapped to each corresponding task. If multiple
+        tasks are given but only one duration is provided, the duration will
+        be assigned to all tasks.
+        
+        Args:
+            tasks (str | list[str]):
+                List of tasks to work on. A string may be used if only
+                one task is to be provided.
+            durations (float | list[float]):
+                Duration in seconds to complete each task.
+
+        Raises:
+            TypeError:
+                If 'tasks' is not a str or a list of strings,
+                or if 'durations' is not a float or list of floats.
+            ValueError:
+                If the number of tasks does not match the number of durations.
+                (except if len(durations)==1)
+        """
+        
+        if isinstance(tasks, str):
+            tasks = [tasks]
+        elif not isinstance(tasks, list):
+            raise TypeError("'tasks' must be a string or a list of strings")
+        
+        if not all(isinstance(task, str) for task in tasks):
+            raise TypeError("All tasks must be strings")
+
+        if isinstance(durations, float):
+            durations = [durations] * len(tasks)
+        elif not isinstance(durations, list):
+            raise TypeError("'durations' must be a float or a list of floats")
+        
+        if not all(isinstance(duration, float) for duration in durations):
+            raise TypeError("All 'durations' must be a float")
+        
+        if len(tasks) != len(durations):
+            raise ValueError(
+                "The number of tasks and durations must match"
+            )
+        
+        if len(tasks) == 0:
+            self.say("No tasks provided.")
+        else:
+            self.say("Tasks to complete: ")
+            tasks_map = dict(zip(tasks, durations))
+            for task, delay in tasks_map.items():
+                self.say(f"• {task}...")
+                time.sleep(delay)
+            self.say(f"{self.profile.name} has completed all the tasks.")
+
+    @staticmethod
+    def choose(iterable: Sequence[Any]) -> Any:
+        """Choose and return a random element from the given sequence.
+
+        Args:
+            iterable: A sequence (e.g., list, tuple, set).
+
+        Returns:
+            A random element from the sequence.
+
+        Raises:
+            IndexError: If the sequence is empty.
+        """
+        return random.choice(iterable)

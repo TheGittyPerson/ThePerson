@@ -1,7 +1,7 @@
 ---
 name: Bug report
 about: Describe the bug to help us fix it
-title: 'BUG/ISSUE: Issue title here'
+title: 'bug: Issue title here'
 labels: bug
 ---
 
@@ -20,10 +20,10 @@ Describe the issue in more depth here.
 Provide the path of the file(s). Specify the lines where the bug can be found.
 
 ```python
-Also paste the code segment(s) here.
+Also paste the code snippet(s) here.
 ```
 ```python
-Put different code segments in different code fences.
+Put different code snippets in different code fences.
 ```
 
 ## Where this applies
@@ -39,12 +39,14 @@ idea.
 
 ## Alternatives considered
 
-List alternatives you have considered and why the solution above is the most 
-suitable.
+(If you know how to fix the issue)
+
+List alternative fixes you have considered and why the solution in "Proposed 
+fix/solution" is the most suitable.
 
 ## Device/environment details
 
-(optional)
+(If relevant)
 
 Provide information about the environment you ran the code in to get the error.
 Ensure you include the Python version you are working with.

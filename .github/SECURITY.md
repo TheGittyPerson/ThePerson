@@ -1,7 +1,7 @@
 # Security Policy
 
 ## 🛡️ Our Commitment
-_The Person_ is an educational tool. While we prioritize a fun and
+_ThePerson_ is an educational tool. While we prioritize a fun and
 safe learning environment, we take security seriously. We encourage all
 contributors to follow secure coding practices.
 

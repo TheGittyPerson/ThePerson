@@ -21,7 +21,7 @@ jobs:
             - Avoid touching others' code when possible
             - **Rebase > Merge**; When updating your PR branch, always use a rebase and resolve conflicts
             - Try to follow PEP 8
-            - Avoid using AI to generate _most_ of your code, comments, or issue/PR descriptions
+            - Avoid using AI to generate code, comments, or issue/PR descriptions
 
         pr-message: >-
           Thanks for opening your first PR on this repository! Make sure you've read our 
@@ -32,4 +32,4 @@ jobs:
             - Avoid touching others' code when possible
             - **Rebase > Merge**; When updating your PR branch, always use a rebase and resolve conflicts
             - Try to follow PEP 8
-            - Avoid using AI to generate _most_ of your code, comments, or issue/PR descriptions
+            - Avoid using AI to code, comments, or issue/PR descriptions
