@@ -1,4 +1,7 @@
-"""Module containing the Mood class for tracking a person's emotional state."""
+"""
+Module containing the Mood class for tracking a person's emotional 
+state.
+"""
 
 from __future__ import annotations
 
@@ -31,7 +34,7 @@ class Mood:
     def __init__(self,
                  name: str = "neutral",
                  intensity: float = 0.0) -> None:
-        """Initialise the mood.
+        """Initialize the mood.
 
         Args:
             name: The name of the mood. Defaults to 'neutral'.
