@@ -3,9 +3,9 @@
 from __future__ import annotations
 
 import random
-from typing import TextIO
 from datetime import date
 from dataclasses import dataclass, field
+from time import sleep
 
 from .goals import Goals
 from .mood import Mood
@@ -79,13 +79,42 @@ class Person:
         self.say(f"Hello! My name is {self.profile.name}.")
 
     @staticmethod
-    def say(*args: object,
-            sep: str | None = " ",
-            end: str | None = "\n",
-            file: TextIO | None = None,
-            flush: bool = False) -> None:
-        """Say a word, phrase, sentence or paragraph."""
-        print(*args, sep=sep, end=end, file=file, flush=flush)
+    def say(
+        *things: object,
+        sep: str = " ",
+        end: str = "\n",
+        flush: bool = False,
+        repeat: int = 1,
+        delay: float = 0.0,
+        pause: float | None = None,
+    ) -> None:
+        """Say words, phrases, sentences, or paragraphs.
+
+        Args:
+            *things: Items to print.
+            sep: String inserted between each item.
+            end: String appended after each print.
+            flush: Whether to forcibly flush the stream.
+            repeat: Number of times to print the message.
+            delay: Delay in seconds between repetitions.
+            pause: Optional alias for delay. If provided, it overrides delay.
+
+        Raises:
+            ValueError: If repeat or delay is negative.
+        """
+        if repeat < 0:
+            raise ValueError("'repeat' must be non-negative")
+
+        if pause is not None:
+            delay = pause
+
+        if delay < 0:
+            raise ValueError("'delay' must be non-negative")
+
+        for index in range(repeat):
+            print(*things, sep=sep, end=end, flush=flush)
+            if index < repeat - 1 and delay > 0:
+                sleep(delay)
 
     @staticmethod
     def wave() -> None:
