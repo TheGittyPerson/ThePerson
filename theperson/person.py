@@ -77,9 +77,25 @@ class Person:
         self.goals = goals if goals is not None else Goals()
         self.inventory = inventory if inventory is not None else Inventory()
 
-    def greet(self) -> None:
-        """Do a simple greeting and introduction."""
-        self.say(f"Hello! My name is {self.profile.name}.")
+    def greet(self, target: Person | None = None) -> None:
+        """Do a simple greeting and introduction.
+
+        Args:
+            target: Optional Person to greet. If provided, the greeting
+            will include the target person's name.
+
+        Raises:
+            TypeError: If target is not a Person or None.
+        """
+        if target is not None and not isinstance(target, Person):
+            raise TypeError("'target' must be a Person or 'None'")
+
+        if target is None:
+            self.say(f"Hello! My name is {self.profile.name}.")
+        else:
+            self.say(
+                f"Hello {target.profile.name}! My name is {self.profile.name}."
+            )
 
     @staticmethod
     def say(*args: object,
