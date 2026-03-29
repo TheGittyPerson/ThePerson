@@ -121,6 +121,37 @@ class Person:
         )
         print(emoji)
 
+    @staticmethod
+    def smile(emoji_type: str | None = None) -> None:
+        """Smile with a smiling emoji.
+
+        This method prints a smiling emoji to represent smiling.
+        Users can choose between different smiling emojis or get a random one.
+
+        Args:
+            emoji_type: The type of smiling emoji to use. Options are:
+                - "happy": 😊 (smiling face with smiling eyes)
+                - "grinning": 😀 (grinning face)
+                - "beaming": 😁 (beaming face with smiling eyes)
+                - "wink": 😉 (winking face)
+                - "heart": 😍 (smiling face with heart-eyes)
+                - "cool": 😎 (smiling face with sunglasses)
+                If None, a random emoji is chosen.
+        """
+        smiling_emojis = {
+            "happy": "\U0001f60a",   # 😊 smiling face with smiling eyes
+            "grinning": "\U0001f600", # 😀 grinning face
+            "beaming": "\U0001f601",  # 😁 beaming face with smiling eyes
+            "wink": "\U0001f609",     # 😉 winking face
+            "heart": "\U0001f60d",    # 😍 smiling face with heart-eyes
+            "cool": "\U0001f60e",     # 😎 smiling face with sunglasses
+        }
+
+        emoji = smiling_emojis.get(
+            emoji_type, random.choice(list(smiling_emojis.values()))
+        )
+        print(emoji)
+
     def introduce(self) -> None:
         """Print a full self-introduction using the person's attributes."""
         parts = []
