@@ -1,5 +1,6 @@
 """
-Module containing the Goal and Goals classes for tracking a person's goals.
+Module containing the Goal and Goals classes for tracking a person's 
+goals.
 """
 
 from __future__ import annotations
@@ -15,7 +16,7 @@ class Goal:
     """
 
     def __init__(self, name: str, description: str = "") -> None:
-        """Initialise the goal.
+        """Initialize the goal.
 
         Args:
             name: The name of the goal.
@@ -67,7 +68,7 @@ class Goals:
     """
 
     def __init__(self) -> None:
-        """Initialise with an empty goals list."""
+        """Initialize with an empty goals list."""
         self.list: list[Goal] = []
 
     def add_goal(self, name: str, description: str = "") -> Goal:
