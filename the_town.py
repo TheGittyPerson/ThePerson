@@ -17,3 +17,10 @@ if __name__ == "__main__":
     )
 
     syed.introduce()
+    
+    gloria = Person(
+        profile=Profile(name="Gloria", gender="female"),
+        professional=Professional(occupation="Data Scientist"),
+    )       
+    
+    gloria.introduce()
