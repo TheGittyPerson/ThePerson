@@ -1,18 +1,16 @@
 """Pytest coverage for Inventory and Item behavior."""
 
-# pylint: disable=redefined-outer-name,missing-function-docstring
-
 from pathlib import Path
 import sys
 
 import pytest
 
+PROJECT_ROOT = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(PROJECT_ROOT))
+
 from theperson.inventory import Inventory
 from theperson.item import Electronic, Food, Item, Valuable, Weapon
 from theperson.person import Person, Profile, Professional
-
-PROJECT_ROOT = Path(__file__).resolve().parents[1]
-sys.path.insert(0, str(PROJECT_ROOT))
 
 
 @pytest.fixture()
