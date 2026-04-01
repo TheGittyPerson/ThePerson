@@ -24,3 +24,10 @@ if __name__ == "__main__":
     )       
     
     gloria.introduce()
+
+    joe = Person(
+        profile=Profile(name="Joe", gender="male"),
+        professional=Professional(occupation="Product Owner")
+    )
+
+    joe.introduce()
