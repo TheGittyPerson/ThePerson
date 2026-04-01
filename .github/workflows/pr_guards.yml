@@ -71,13 +71,6 @@ jobs:
               return;
             }
 
-            if (prefix === "town" && !rest.startsWith("add-")) {
-              core.setFailed(
-                "Town branches must be named like 'town/add-yourname'."
-              );
-              return;
-            }
-
             if (title.startsWith("TASK:") && !/#\d+/.test(title)) {
               core.setFailed(
                 "Task PR titles should include an issue number, " +
