@@ -4,7 +4,7 @@ from __future__ import annotations
 
 import random
 import time
-from typing import Any, Sequence
+from typing import Any, Sequence, IO
 from datetime import date
 from dataclasses import dataclass, field
 
@@ -398,3 +398,23 @@ class Person:
             name=target.profile.name
         )
         
+    @staticmethod
+    def write(contents: object, file: IO[str]) -> None:
+        """Write contents to a text file-like object.
+
+        Args:
+            contents: The content to be written, converted to a string.
+            file: A text I/O stream with a write(str) method.
+
+        Raises:
+            TypeError: If file has no callable write method.
+        """
+        write_method = getattr(file, "write", None)
+
+        if write_method is None or not callable(write_method):
+            raise TypeError(
+                f"file must be a writable object with a write(str) method, "
+                f"got {type(file).__name__}"
+            )
+
+        file.write(str(contents))
