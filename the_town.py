@@ -44,3 +44,19 @@ if __name__ == "__main__":
     
     morpheus.greet(joe)
     print(morpheus.compliment(joe))
+
+    alex = Person(
+        profile=Profile(
+            name="Alex",
+            gender="non-binary",
+            hobbies=["open-source", "reading", "coffee"]
+        ),
+        professional=Professional(
+            occupation="Software Engineer",
+            skills=["Python", "code review"]
+        )
+    )
+
+    alex.introduce()
+    alex.goals.add_goal("contribute to open-source daily")
+    alex.greet(morpheus)
