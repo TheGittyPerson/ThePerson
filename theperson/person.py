@@ -54,7 +54,7 @@ class LifeDates:
 
 class Person:
     """A class to represent a person."""
-    
+
     def __init__(self,
                  profile: Profile | None = None,
                  physical: Physical | None = None,
@@ -64,7 +64,7 @@ class Person:
                  goals: Goals | None = None,
                  inventory: Inventory | None = None,) -> None:
         """Initialize the person's attributes."""
-        
+
         self.profile = profile if profile is not None else Profile()
         self.physical = physical if physical is not None else Physical()
         self.professional = (
@@ -96,6 +96,45 @@ class Person:
             self.say(
                 f"Hello {target.profile.name}! My name is {self.profile.name}."
             )
+
+    def compliment(self, target: Person) -> None:
+        """Say a random compliment addressed to another person.
+
+        Args:
+            target (Person): The person receiving the compliment.
+
+        Raises:
+            TypeError: If target is not a Person instance.
+            ValueError: If target has no name set.
+        """
+
+        if not isinstance(target, Person):
+            raise TypeError(
+                f"'target' must be a Person, got {type(target).__name__}"
+            )
+
+        if target.profile.name is None:
+            raise ValueError(
+                "'target' must have a name to receive a compliment"
+            )
+
+        compliments = [
+            "{name}, I brag to all my friends about you.",
+            "{name}, you are more fun than anyone I know.",
+            "{name}, you just made my day.",
+            "{name}, you are one of the strongest people I know.",
+            "{name}, you look great today.",
+            "{name}, you have the best smile.",
+            "{name}, your outlook on life is amazing.",
+            "{name}, you light up the room.",
+            "{name}, you make a bigger impact than you realize.",
+            "{name}, you are always so helpful.",
+            "{name}, you are so sweet.",
+        ]
+
+        self.say(random.choice(compliments).format(
+            name=target.profile.name
+        ))
 
     @staticmethod
     def say(*things: object,
@@ -219,7 +258,7 @@ class Person:
 
         person = target if target is not None else self
         attr = f"{day}_date"
-        
+
         if not hasattr(person.life_dates, attr):
             raise AttributeError(
                 f"'{day}' is not a recognised celebration "
@@ -236,7 +275,7 @@ class Person:
             )
 
         today = date.today()
-        
+
         if target is not None:
             default_message = (
                 message or f"Happy {day.capitalize()}, {target.profile.name}! "
@@ -268,7 +307,7 @@ class Person:
                 self.say(not_today_message)
         else:
             self.say(default_message)
-    
+
     def existential_crisis(self) -> None:
         """Say a random existential crisis message."""
         messages = [
@@ -282,7 +321,7 @@ class Person:
         ]
 
         self.say(random.choice(messages))
-    
+
     def do_tasks(self,
                  tasks: str | list[str],
                  durations: float | list[float]) -> None:
@@ -308,28 +347,28 @@ class Person:
                 If the number of tasks does not match the number of durations.
                 (except if len(durations)==1)
         """
-        
+
         if isinstance(tasks, str):
             tasks = [tasks]
         elif not isinstance(tasks, list):
             raise TypeError("'tasks' must be a string or a list of strings")
-        
+
         if not all(isinstance(task, str) for task in tasks):
             raise TypeError("All tasks must be strings")
-        
+
         if isinstance(durations, float):
             durations = [durations] * len(tasks)
         elif not isinstance(durations, list):
             raise TypeError("'durations' must be a float or a list of floats")
-        
+
         if not all(isinstance(duration, float) for duration in durations):
             raise TypeError("All 'durations' must be a float")
-        
+
         if len(tasks) != len(durations):
             raise ValueError(
                 "The number of tasks and durations must match"
             )
-        
+
         if len(tasks) == 0:
             self.say("No tasks provided.")
         else:
@@ -339,7 +378,7 @@ class Person:
                 self.say(f"• {task}...")
                 time.sleep(delay)
             self.say(f"{self.profile.name} has completed all the tasks.")
-    
+
     @staticmethod
     def choose(iterable: Sequence[Any]) -> Any:
         """Choose and return a random element from the given sequence.
@@ -354,47 +393,3 @@ class Person:
             IndexError: If the sequence is empty.
         """
         return random.choice(iterable)
-    
-    @staticmethod
-    def compliment(target: Person) -> str:
-        """Return a random compliment addressed to another person.
-
-        Args:
-            target (Person): The person receiving the compliment.
-
-        Returns:
-            str: A compliment message including the target's name.
-
-        Raises:
-            TypeError: If target is not a Person instance.
-            ValueError: If target has no name set.
-        """
-
-        if not isinstance(target, Person):
-            raise TypeError(
-                f"'target' must be a Person, got {type(target).__name__}"
-            )
-
-        if target.profile.name is None:
-            raise ValueError(
-                "'target' must have a name to receive a compliment"
-            )
-
-        compliments = [
-            "{name}, I brag to all my friends about you.",
-            "{name}, you are more fun than anyone I know.",
-            "{name}, you just made my day.",
-            "{name}, you are one of the strongest people I know.",
-            "{name}, you look great today.",
-            "{name}, you have the best smile.",
-            "{name}, your outlook on life is amazing.",
-            "{name}, you light up the room.",
-            "{name}, you make a bigger impact than you realize.",
-            "{name}, you are always so helpful.",
-            "{name}, you are so sweet.",
-        ]
-
-        return random.choice(compliments).format(
-            name=target.profile.name
-        )
-        
