@@ -20,8 +20,7 @@ inside your computer. It features a central `Person` class that developers
 can expand with new attributes, behaviors, and quirks.
 
 `theperson/person.py` is the heart of the project. Inside the script is a 
-`Person` class where you can build in. You may add other classes and modules 
-to further expand and improve the project.
+`Person` class where you can build in.
 
 Our goal is to simulate a human in Python with plenty of features (and create a 
 super long script) while providing a **learning opportunity** for beginners 
@@ -39,7 +38,7 @@ creativity**. We also aim to keep our community safe and engaging for everyone.
   "hunger levels" to implementing a complex `dream()` system, the only limit is
   your imagination.
 - **Be Part of TheTown**: _TheTown_ is a fun little community that anyone 
-  can join. Read [the section below](#-be-part-of-the-town) to find out more.
+  can join. Read [the section below](#-be-part-of-thetown) to find out more.
 
 Read our [Contributing Guidelines][contrib] to get started.
 
@@ -49,37 +48,19 @@ You can find tasks under the [Issues][repo-issues] tab on GitHub. These are
 issues labeled `task` and are contributions you can make with specific 
 instructions and more guidance. 
 
-If you are interested in completing a task: 
-- **Leave a comment requesting assignment for the issue**.
-- Wait for a thumbs-up from a maintainer.
-- Give our [Contributing Guidelines][contrib] a read.
-- Start coding!
+Read the [Contributing Guidelines][contrib-tasks] if you're interested in 
+working on a task.
 
 > Click [HERE][avail-tasks] to see available tasks (link filtered for pinned 
 > tasks or open tasks with no assignees)
-
-#### Note:
-Each task issue is labeled with its approximate difficulty level; to ensure 
-fair distribution of tasks amongst contributors, **please try to complete tasks 
-labeled with your level of coding experience only**.
-
-However, if a task has been left untaken for a long time, feel free to claim 
-the task no matter the labeled difficulty.
 
 ## 🏡 Be Part of TheTown!
 
 In the root directory of this repo, you will see `the_town.py`. Add yourself 
 as an instance of `Person`!
 
-Read [CONTRIBUTING](.github/CONTRIBUTING.md) to get started. Any PR not 
+Read out [Contributing Guidelines][contrib-thetown] to get started. Any PR not 
 following the guidelines under "TheTown" will be closed.
-
-### 📖 Town Laws:
-- Only edit your own code, even if you see a mistake someone made. That's their 
-  job to fix it.
-- Don't change, add, or remove other townsfolk's attributes or called methods.
-- Don't kill your neighbors (Don't remove `Person` instances other than your 
-  own).
 
 ## 🤖 AI-Assisted Contributions
 
@@ -93,21 +74,10 @@ We expect the same from contributors and **discourage using AI for
 contributions, especially for writing large amounts of code**.(Read our 
 [Code of Conduct][coc])
 
-AI tools can be helpful during development, and contributors are allowed to use
-them solely as **assistive tools or translators**. However, this project does 
-**not accept contributions that are noticeably AI-generated with minimal 
-human work**.
-
-Pull requests that appear to be:
-- primarily AI-generated,
-- created by a bot/automated account,
-- or lacking human oversight
-may be **closed without merging**.
-
 Just so you know, it is quite easy to tell AI-generated code apart from 
 human-writen code.
 
-Please read the [Contributing Guidelines][contrib] for more information.
+Please read the [Contributing Guidelines][contrib-ai] for more information.
 
 ---
 
@@ -162,6 +132,9 @@ If you enjoyed contributing to this project or appreciate the concept, consider
 [repo-issues]: https://github.com/TheGittyPerson/ThePerson/issues
 [avail-tasks]: https://github.com/TheGittyPerson/ThePerson/issues?q=is%3Aissue%20state%3Aopen%20(no%3Aassignee%20OR%20label%3A%22%F0%9F%93%8C%20pinned%22)%20label%3Atask
 [contrib]: /.github/CONTRIBUTING.md
+[contrib-tasks]: /.github/CONTRIBUTING.md#-task-issues
+[contrib-thetown]: /.github/CONTRIBUTING.md#-thetown
+[contrib-ai]: /.github/CONTRIBUTING.md#-ai-assisted-contributions
 [coc]: /.github/CODE_OF_CONDUCT.md
 [profile]: https://github.com/TheGittyPerson
 [python-download]: https://www.python.org/downloads/

@@ -5,10 +5,11 @@ on:
     types: [opened, edited, synchronize, reopened]
 
 jobs:
-  naming:
+  branch_naming:
     runs-on: ubuntu-latest
     permissions:
       pull-requests: read
+      contents: read
     steps:
       - uses: actions/github-script@v7
         with:
@@ -47,7 +48,7 @@ jobs:
 
             if (!branch.includes("/")) {
               core.setFailed(
-                "Branch name must include a prefix, e.g. 'feature/my-change'."
+                "Branch name must include a prefix, e.g. 'feature/do-change'."
               );
               return;
             }
@@ -73,17 +74,10 @@ jobs:
 
             if (title.startsWith("TASK:") && !/#\d+/.test(title)) {
               core.setFailed(
-                "Task PR titles should include an issue number, " +
+                "Task PR titles should include the issue number of the task, " +
                 "e.g. 'TASK: Add feature (#123)'."
               );
             }
-
-  town_guard:
-    runs-on: ubuntu-latest
-    permissions:
-      pull-requests: read
-      contents: read
-    steps:
       - uses: actions/github-script@v7
         with:
           script: |

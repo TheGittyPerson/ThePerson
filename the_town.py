@@ -43,4 +43,21 @@ if __name__ == "__main__":
     joe.greet(morpheus)
     
     morpheus.greet(joe)
-    print(morpheus.compliment(joe))
+    morpheus.compliment(joe)
+
+    chetan = Person(
+        profile=Profile(
+            name="Chetan",
+            gender="Male",
+            hobbies=["Music", "Reading", "Movies"]
+        ),
+        professional=Professional(
+            occupation="Software Engineer",
+            skills=["Software Architecture", "Web Development"]
+        )
+    )
+
+    chetan.introduce()
+    chetan.say("Hello everyone! I'm excited to be part of TheTown. 🚀")
+    chetan.mood.set_mood("excited", 0.8)
+    chetan.goals.add_goal("Contribute to open-source")

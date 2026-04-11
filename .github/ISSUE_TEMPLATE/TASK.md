@@ -24,14 +24,14 @@ labels: ['good first issue', 'help wanted', task]
 7. Submit the PR (Ensure you allow maintainers to edit)
 8. Optional: Request a review from a maintainer
 
-Please make sure you have read the [Contributing Guidelines][contrib] before 
-working.
+Please make sure you have read the [Contributing Guidelines][contrib] before working.
+
+---
 
 Feel free to ask any questions here!
 
-If you are interested in working on this task, **please leave a comment 
-requesting assignment** to explicitly let others know the task is taken and 
-prevent duplicate PRs.
+If you are interested in working on this task,
+**please leave a comment requesting assignment** to explicitly let others know the task is taken and prevent duplicate PRs.
 
 [contrib]: 
 https://github.com/TheGittyPerson/ThePerson/blob/main/.github/CONTRIBUTING.md

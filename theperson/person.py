@@ -4,7 +4,7 @@ from __future__ import annotations
 
 import random
 import time
-from typing import Any, Sequence
+from typing import Any, Sequence, IO
 from datetime import date
 from dataclasses import dataclass, field
 
@@ -54,7 +54,7 @@ class LifeDates:
 
 class Person:
     """A class to represent a person."""
-    
+
     def __init__(self,
                  profile: Profile | None = None,
                  physical: Physical | None = None,
@@ -64,7 +64,7 @@ class Person:
                  goals: Goals | None = None,
                  inventory: Inventory | None = None,) -> None:
         """Initialize the person's attributes."""
-        
+
         self.profile = profile if profile is not None else Profile()
         self.physical = physical if physical is not None else Physical()
         self.professional = (
@@ -170,7 +170,8 @@ class Person:
         }
 
         emoji = crying_emojis.get(
-            emoji_type, random.choice(list(crying_emojis.values()))
+            # Stringify to comply with type hint when 'emoji_type' is None
+            str(emoji_type), random.choice(list(crying_emojis.values()))
         )
         print(emoji)
 
@@ -219,7 +220,7 @@ class Person:
 
         person = target if target is not None else self
         attr = f"{day}_date"
-        
+
         if not hasattr(person.life_dates, attr):
             raise AttributeError(
                 f"'{day}' is not a recognised celebration "
@@ -236,7 +237,7 @@ class Person:
             )
 
         today = date.today()
-        
+
         if target is not None:
             default_message = (
                 message or f"Happy {day.capitalize()}, {target.profile.name}! "
@@ -268,7 +269,7 @@ class Person:
                 self.say(not_today_message)
         else:
             self.say(default_message)
-    
+
     def existential_crisis(self) -> None:
         """Say a random existential crisis message."""
         messages = [
@@ -282,7 +283,7 @@ class Person:
         ]
 
         self.say(random.choice(messages))
-    
+
     def do_tasks(self,
                  tasks: str | list[str],
                  durations: float | list[float]) -> None:
@@ -308,28 +309,27 @@ class Person:
                 If the number of tasks does not match the number of durations.
                 (except if len(durations)==1)
         """
-        
         if isinstance(tasks, str):
-            tasks = [tasks]
+            tasks: list = [tasks]
         elif not isinstance(tasks, list):
             raise TypeError("'tasks' must be a string or a list of strings")
-        
+
         if not all(isinstance(task, str) for task in tasks):
             raise TypeError("All tasks must be strings")
-        
+
         if isinstance(durations, float):
-            durations = [durations] * len(tasks)
+            durations: list = [durations] * len(tasks)
         elif not isinstance(durations, list):
             raise TypeError("'durations' must be a float or a list of floats")
-        
+
         if not all(isinstance(duration, float) for duration in durations):
             raise TypeError("All 'durations' must be a float")
-        
+
         if len(tasks) != len(durations):
             raise ValueError(
                 "The number of tasks and durations must match"
             )
-        
+
         if len(tasks) == 0:
             self.say("No tasks provided.")
         else:
@@ -339,7 +339,7 @@ class Person:
                 self.say(f"• {task}...")
                 time.sleep(delay)
             self.say(f"{self.profile.name} has completed all the tasks.")
-    
+
     @staticmethod
     def choose(iterable: Sequence[Any]) -> Any:
         """Choose and return a random element from the given sequence.
@@ -355,31 +355,26 @@ class Person:
         """
         return random.choice(iterable)
     
-    @staticmethod
-    def compliment(target: Person) -> str:
-        """Return a random compliment addressed to another person.
+    def compliment(self, target: Person) -> None:
+        """Give a random compliment to another person.
 
         Args:
             target (Person): The person receiving the compliment.
-
-        Returns:
-            str: A compliment message including the target's name.
 
         Raises:
             TypeError: If target is not a Person instance.
             ValueError: If target has no name set.
         """
-
         if not isinstance(target, Person):
             raise TypeError(
                 f"'target' must be a Person, got {type(target).__name__}"
             )
-
+        
         if target.profile.name is None:
             raise ValueError(
                 "'target' must have a name to receive a compliment"
             )
-
+        
         compliments = [
             "{name}, I brag to all my friends about you.",
             "{name}, you are more fun than anyone I know.",
@@ -393,8 +388,61 @@ class Person:
             "{name}, you are always so helpful.",
             "{name}, you are so sweet.",
         ]
+        
+        self.say(
+            random.choice(compliments).format(
+                name=target.profile.name
+            )
+        )
 
-        return random.choice(compliments).format(
-            name=target.profile.name
+    @staticmethod
+    def write(contents: object, file: IO[str]) -> None:
+        """Write contents to a text file-like object.
+        
+        Args:
+            contents: The content to be written, converted to str.
+            file: A text I/O stream with a 'write(str)' method.
+        
+        Raises:
+            TypeError: If file has no callable write method.
+        """
+        write_method = getattr(file, "write", None)
+        
+        if write_method is None or not callable(write_method):
+            raise TypeError(
+                "file must be a writable object with a write(str) method, "
+                f"got {type(file).__name__}"
+            )
+        
+        file.write(str(contents))
+
+    @staticmethod
+    def smile(smile_type: str | None = None) -> None:
+        """Shows a smiling or grinning face.
+        
+        Args:
+            smile_type (str | None):
+                The type of smile to show (e.g., 'small', 'smile',
+                'grin', 'wide'). Defaults to random if not given or not found.
+        
+        Raises:
+            TypeError: if smile_type is given but not a str.
+        """
+        smiling_emojis = {
+            "small": "\U0001F642",  # 🙂 slightly smiling face
+            "smile": "\U0001F60A",  # 😊 smiling face, smiling eyes
+            "grin": "\U0001F601",  # 😁 grinning face with smiling eyes
+            "wide": "\U0001F604",  # 😄 open mouth with smiling eyes
+        }
+        
+        if smile_type is not None and not isinstance(smile_type, str):
+            raise TypeError(
+                "'smile_type' must be a str or None, "
+                f"got {type(smile_type).__name__}"
+            )
+        
+        smiley = smiling_emojis.get(
+            str(smile_type), random.choice(list(smiling_emojis.values()))
         )
         
+        print(smiley)
