@@ -473,7 +473,7 @@ class Person:
             )
 
         emoji = laughing_emojis.get(
-            str(laugh_type), random.choice(list(laugh_emojis.values()))
+            str(laugh_type), random.choice(list(laughing_emojis.values()))
         )
 
         print(emoji)
