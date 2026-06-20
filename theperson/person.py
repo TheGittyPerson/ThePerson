@@ -429,10 +429,10 @@ class Person:
             TypeError: if smile_type is given but not a str.
         """
         smiling_emojis = {
-            "small": "\U0001F642",  # 🙂 slightly smiling face
-            "smile": "\U0001F60A",  # 😊 smiling face, smiling eyes
-            "grin": "\U0001F601",  # 😁 grinning face with smiling eyes
-            "wide": "\U0001F604",  # 😄 open mouth with smiling eyes
+            "small": "\U0001F642",  # dYT, slightly smiling face
+            "smile": "\U0001F60A",  # dY~S smiling face, smiling eyes
+            "grin": "\U0001F601",  # dY~? grinning face with smiling eyes
+            "wide": "\U0001F604",  # dY~, open mouth with smiling eyes
         }
         
         if smile_type is not None and not isinstance(smile_type, str):
@@ -446,6 +446,37 @@ class Person:
         )
         
         print(smiley)
+
+    @staticmethod
+    def laugh(laugh_type: str | None = None) -> None:
+        """Shows a laughing face.
+
+        Args:
+            laugh_type (str | None):
+                The type of laugh to show (e.g., 'light', 'tears',
+                'loud', 'rofl'). Defaults to random if not given or not found.
+
+        Raises:
+            TypeError: if laugh_type is given but not a str.
+        """
+        laughing_emojis = {
+            "light": "\U0001F606",  # 😆 grinning squinting face
+            "tears": "\U0001F923",  # 🤣 rolling on the floor laughing
+            "loud": "\U0001F602",  # 😂 face with tears of joy
+            "rofl": "\U0001F923",  # 🤣 rolling on the floor laughing
+        }
+
+        if laugh_type is not None and not isinstance(laugh_type, str):
+            raise TypeError(
+                "'laugh_type' must be a str or None, "
+                f"got {type(laugh_type).__name__}"
+            )
+
+        emoji = laughing_emojis.get(
+            str(laugh_type), random.choice(list(laugh_emojis.values()))
+        )
+
+        print(emoji)
     
     def age_up(self,
                increment: int = 1,
