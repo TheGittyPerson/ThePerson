@@ -446,6 +446,37 @@ class Person:
         )
         
         print(smiley)
+
+    @staticmethod
+    def laugh(laugh_type: str | None = None) -> None:
+        """Shows a laughing face.
+
+        Args:
+            laugh_type (str | None):
+                The type of laugh to show (e.g., 'light', 'tears',
+                'loud', 'rofl'). Defaults to random if not given or not found.
+
+        Raises:
+            TypeError: if laugh_type is given but not a str.
+        """
+        laughing_emojis = {
+            "light": "\U0001F606",  # 😆 grinning squinting face
+            "tears": "\U0001F602",  # 😂 face with tears of joy
+            "loud": "\U0001F605",  # 😅 grinning face with sweat
+            "rofl": "\U0001F923",  # 🤣 rolling on the floor laughing
+        }
+
+        if laugh_type is not None and not isinstance(laugh_type, str):
+            raise TypeError(
+                "'laugh_type' must be a str or None, "
+                f"got {type(laugh_type).__name__}"
+            )
+
+        emoji = laughing_emojis.get(
+            str(laugh_type), random.choice(list(laughing_emojis.values()))
+        )
+
+        print(emoji)
     
     def age_up(self,
                increment: int = 1,
