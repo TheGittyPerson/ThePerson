@@ -461,8 +461,8 @@ class Person:
         """
         laughing_emojis = {
             "light": "\U0001F606",  # 😆 grinning squinting face
-            "tears": "\U0001F923",  # 🤣 rolling on the floor laughing
-            "loud": "\U0001F602",  # 😂 face with tears of joy
+            "tears": "\U0001F602",  # 😂 face with tears of joy
+            "loud": "\U0001F605",  # 😅 grinning face with sweat
             "rofl": "\U0001F923",  # 🤣 rolling on the floor laughing
         }
 
