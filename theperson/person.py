@@ -429,10 +429,10 @@ class Person:
             TypeError: if smile_type is given but not a str.
         """
         smiling_emojis = {
-            "small": "\U0001F642",  # dYT, slightly smiling face
-            "smile": "\U0001F60A",  # dY~S smiling face, smiling eyes
-            "grin": "\U0001F601",  # dY~? grinning face with smiling eyes
-            "wide": "\U0001F604",  # dY~, open mouth with smiling eyes
+            "small": "\U0001F642",  # 🙂 slightly smiling face
+            "smile": "\U0001F60A",  # 😊 smiling face, smiling eyes
+            "grin": "\U0001F601",  # 😁 grinning face with smiling eyes
+            "wide": "\U0001F604",  # 😄 open mouth with smiling eyes
         }
         
         if smile_type is not None and not isinstance(smile_type, str):
