@@ -1,7 +1,6 @@
 """Add yourself as a Person instance here!"""
 
-from theperson.person import Person, Profile, Professional
-
+from theperson.person import Person, Physical, Professional, Profile
 
 if __name__ == "__main__":
     morpheus = Person(
@@ -17,12 +16,12 @@ if __name__ == "__main__":
     )
 
     syed.introduce()
-    
+
     gloria = Person(
         profile=Profile(name="Gloria", gender="female"),
         professional=Professional(occupation="Data Scientist"),
-    )       
-    
+    )
+
     gloria.introduce()
 
     joe = Person(
@@ -34,14 +33,14 @@ if __name__ == "__main__":
         professional=Professional(
             occupation="Product Owner", 
             skills=["product design", "prototyping"]
-        )
+        ),
     )
 
     joe.introduce()
     joe.mood.set_mood("calm", 0.9)
     joe.goals.add_goal("master git")
     joe.greet(morpheus)
-    
+
     morpheus.greet(joe)
     morpheus.compliment(joe)
 
@@ -53,11 +52,29 @@ if __name__ == "__main__":
         ),
         professional=Professional(
             occupation="Software Engineer",
-            skills=["Software Architecture", "Web Development"]
-        )
+            skills=["Software Architecture", "Web Development"],
+        ),
     )
 
     chetan.introduce()
     chetan.say("Hello everyone! I'm excited to be part of TheTown. 🚀")
     chetan.mood.set_mood("excited", 0.8)
     chetan.goals.add_goal("Contribute to open-source")
+
+    kraken = Person(
+        profile=Profile(
+            name="Kraken",
+            gender="Male",
+            hobbies=[
+                "Programming",
+                "Work (Not Programming)",
+                "Hiking",
+                "Walking my dog",
+            ],
+        ),
+        physical=Physical(weight=150, hair_color="Brown", skin_tone="Light"),
+    )
+    kraken.introduce()
+    kraken.say("Hello everyone! Great to be part of something.")
+    kraken.mood.set_mood("excited", 0.8)
+    kraken.goals.add_goal("Make my first commit")
