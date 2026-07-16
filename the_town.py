@@ -26,10 +26,13 @@ if __name__ == "__main__":
 
     joe = Person(
         profile=Profile(
-            name="Joe", gender="male", hobbies=["coding", "chess", "hiking"]
+            name="Joe", 
+            gender="male", 
+            hobbies=["coding", "chess", "hiking"]
         ),
         professional=Professional(
-            occupation="Product Owner", skills=["product design", "prototyping"]
+            occupation="Product Owner", 
+            skills=["product design", "prototyping"]
         ),
     )
 
@@ -43,7 +46,9 @@ if __name__ == "__main__":
 
     chetan = Person(
         profile=Profile(
-            name="Chetan", gender="Male", hobbies=["Music", "Reading", "Movies"]
+            name="Chetan",
+            gender="Male",
+            hobbies=["Music", "Reading", "Movies"]
         ),
         professional=Professional(
             occupation="Software Engineer",
