@@ -26,12 +26,13 @@ class Profile:
 
 @dataclass
 class Physical:
-    """Physical characteristics such as height, weight and appearance."""
+    """Physical characteristics such as height, weight, appearance and hit points."""
     
     height: float | None = None
     weight: float | None = None
     skin_tone: str | None = None
     hair_color: str | None = None
+    hp: int | None = None
 
 
 @dataclass
