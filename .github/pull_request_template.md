@@ -1,16 +1,42 @@
-**PLEASE FOLLOW THE INSTRUCTIONS BELOW BEFORE WRITING THIS PULL REQUEST.**
+(If it's a new feature)
 
-### 📋 Select a Template
+Summarize what the feature does and why it’s needed here.
 
-On the "Open a pull request" page (where you are right now):
-1. Switch to the Preview tab.
-2. Click one of the links below to load the correct template for your PR:
+## How it works
 
-   - [📋 Completed Task Template](?template=COMPLETED-TASK.md)
-   - [🐛 Bug Fix Template](?template=BUG-FIX.md)
-   - [✨ New Feature Template](?template=NEW-FEATURE.md)
-   - **Clear this text to write your PR from scratch**
+Then, describe the feature added in more depth here.
 
-   _Note_: Clicking a link above will reload this page and overwrite any text.
-3. If a "Comparing changes" page opens, select "Create pull request" to 
-   continue to your chosen template.
+```python
+You can provide code snippets of your feature with some examples.
+```
+
+## Where this is applicable
+
+Where the feature can be applied in code or how it can be used.
+
+## Limitations of the feature
+
+(if any)
+
+
+Resolves #<issue-number>
+
+---
+
+(If it's a bug fix)
+
+Describe the bug (or reference the bug report).
+
+Then, describe how you fixed this bug
+
+## Changes
+
+- Describe the changes you made in more detail.
+- You may use bullet points
+
+
+Resolves #<issue-number>
+
+---
+
+Clear this template if it's not what you need

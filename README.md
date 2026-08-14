@@ -29,20 +29,18 @@ creativity**. We also aim to keep our community safe and engaging for everyone.
 
 ---
 
-## 🚀 Why Contribute?
-- **Beginner-Friendly**: Whether you’re adding a new hobby, an `eat()` 
-  method, or fixing a typo, no contribution is too small.
-- **Learn OOP by Doing**: Understand classes, methods, and inheritance by 
-  literally building a human being out of code.
-- **Infinite Possibilities**: This project is _never_ complete. From tracking 
-  "hunger levels" to implementing a complex `dream()` system, the only limit is
-  your imagination.
-- **Be Part of TheTown**: _TheTown_ is a fun little community that anyone 
-  can join. Read [the section below](#-be-part-of-thetown) to find out more.
+## Why Contribute?
+- This project is beginner-friendly with plenty of support for newcomers.
+- The best way to learn OOP is by doing.
+- There are infinite possibilities and always more you can add to the project.
 
 Read our [Contributing Guidelines][contrib] to get started.
 
 ## 📋 Completing Tasks
+
+Completing tasks is the main feature of this repository. You can help create
+tasks by tagging @TheGittyPerson in any issue or pull request and pitching 
+your idea.
 
 You can find tasks under the [Issues][repo-issues] tab on GitHub. These are 
 issues labeled `task` and are contributions you can make with specific 
@@ -61,23 +59,6 @@ as an instance of `Person`!
 
 Read out [Contributing Guidelines][contrib-thetown] to get started. Any PR not 
 following the guidelines under "TheTown" will be closed.
-
-## 🤖 AI-Assisted Contributions
-
-In this repository, maintainers are expected to minimize the use of AI and 
-prioritize human interaction; other than in GitHub Actions workflows and 
-assistance in code reviews, all comments, review messages, task issues, and 
-documentation are written by human hands, ensuring any AI assistance is 
-**thoroughly reviewed and understood**.
-
-We expect the same from contributors and **discourage using AI for 
-contributions, especially for writing large amounts of code**.(Read our 
-[Code of Conduct][coc])
-
-Just so you know, it is quite easy to tell AI-generated code apart from 
-human-writen code.
-
-Please read the [Contributing Guidelines][contrib-ai] for more information.
 
 ---
 
