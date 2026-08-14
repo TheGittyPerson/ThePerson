@@ -17,8 +17,8 @@ jobs:
     - uses: actions/stale@v5
       with:
         repo-token: ${{ secrets.GITHUB_TOKEN }}
-        days-before-issue-stale: 21
-        days-before-pr-stale: 14
+        days-before-issue-stale: 40
+        days-before-pr-stale: 20
         exempt-issue-labels: "📌 pinned,security,in-progress"
         exempt-pr-labels: "📌 pinned,security,in-progress"
         stale-issue-message: |
