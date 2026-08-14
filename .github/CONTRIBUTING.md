@@ -7,12 +7,8 @@
 Thanks for considering contributing to this open-source project! Both beginners 
 and experts are very welcome here.
 
-This project is purely for entertainment purposes, so _do_ have fun and let 
-your creativity flow.
-
-If you want to contribute to ThePerson, I recommend taking the time to read 
-these contributing guidelines (or even use your AI assistant to summarize this 
-document for you).
+This project is purely for entertainment purposes, so please have fun and let 
+your creativity loose.
 
 ---
 
@@ -54,7 +50,7 @@ ones.
 
 ## 📐 Requirements
 
-- **Python 3.12 and above** (recommended)
+- **Python 3.12 or above** (recommended)
 - A recognized IDE / code editor, for example:
   - Visual Studio Code (with a proper linter or code analyzer installed)
   - JetBrains IDEs (PyCharm, IntelliJ, WebStorm, etc.)
@@ -72,8 +68,8 @@ ones.
 pull request. This is to ensure all changes are discussed properly (and you 
 don't waste your time creating a PR that ends up getting closed). 
 
-This is also to prevent automatically-generated pull requests created by 
-automated bot accounts that usually come with low effort and minimal engagement.
+This is also to minimize automatically-generated pull requests created by 
+automated bot accounts.
 
 ### 🐛 Reporting Bugs
 
@@ -82,8 +78,6 @@ To report a bug:
 2. Select "New issue".
 3. **Template selection: Choose "Bug report"**.
 4. Describe the issue thoroughly, using the template as a guide
-   - If your issue description severely lacks information, maintainers may 
-     close it.
 5. Submit the issue.
 
 ### ☝️ Suggesting Features
@@ -93,20 +87,15 @@ To suggest a feature:
 2. Select "New issue".
 3. **Template selection: Choose "Feature request"**
 4. Describe the feature thoroughly, using the template as a guide.
-    - If your issue description severely lacks information, maintainers may 
-      close it.
 5. Submit the issue.
 
-...or add a comment under a [discussion][repo-disc] describing the feature.
+Or, add a comment under a [discussion][repo-disc] describing the feature.
 
 [^ TOC](#-table-of-contents)
 
 ---
 
 ## 🧭 Pull Request Guidelines
-
-(NOTE: Read "[Opening Issues](#-opening-issues)" first if you plan on adding an 
-enhancement to the project or fixing a bug)
 
 1. Create a fork of [the repository][repo].
 2. Clone the forked repository to your local machine.
@@ -134,24 +123,13 @@ enhancement to the project or fixing a bug)
      - e.g.: `Add test files`, `Fix this function`, `Update README`
 5. Push commits to GitHub (if you have made changes locally on your machine).
 6. Create and submit a pull request.
-7. Optional: Request a review from a maintainer.
-
-Please try to stay engaged with your PR and **avoid abandoning your work**. 
-
-You should receive a notification/email once your changes have been merged into 
-upstream main.
 
 ### ⚠️ THINGS TO KEEP IN MIND
-- **Rebase > Merge**: When updating a branch, **always use a rebase** and 
-  resolve conflicts.
 - **Do not work directly on `main`**; always create a new branch on your fork.
-- To avoid conflicts, **always remember to update your local fork** 
-  (`git pull`) before working.
-- If you forgot to update your fork before working, run `git pull --rebase` 
-  and resolve conflicts (if any).
-  - If you run into any trouble during conflict resolution, or are not sure 
-    how to resolve a conflict, tag a maintainer/reviewer in an appropriate 
-    issue or PR comments section for help.
+- To avoid conflicts, **always remember to update your local fork** before 
+  working:
+  - Go to your fork repository on github, `Snyc Project`, and `git pull 
+    origin/main` locally.
 
 [^ TOC](#-table-of-contents)
 
@@ -165,7 +143,7 @@ Some issues will be opened in the [Issues tab][repo-issues] on GitHub, labeled
 2. **Leave a comment requesting assignment for the issue**.
 3. Wait for a thumbs-up from a maintainer.
 4. Follow the steps above to create a fork and PR with your changes.
-5. Start coding!
+5. Code away!
 
 **When writing the pull request**:
 - Write your PR title like so: `TASK: <task title> (#<issue number>)`
@@ -186,24 +164,11 @@ try to complete tasks labeled with your level of coding experience only**
 However, if a task has been left untaken for a long time, feel free to claim 
 the task no matter the labeled difficulty.
 
-#### Regarding the use of AI:
-The purpose of this project is to provide a learning opportunity for growing 
-developers, and using AI to complete [tasks](#-task-issues) defeats this 
-purpose. It is okay to make mistakes when completing tasks — reviewers will 
-be happy to correct them and give feedback.
-
 [^ TOC](#-table-of-contents)
 
 ## 🧑‍💻 Code Guidelines
 
-Here are **3 rules** you should remember when writing code:
-
-> `1.` Styling matters
-
-Writing properly styled and formatted code ensures that your code can be easily 
-read and understood by everyone.
-
-For Python code, follow [PEP 8][pep-8].
+Follow [PEP 8] as much as possible:
 
 Key things to keep in mind include:
 - **Line lengths** (try to keep lines **below 80 characters**; PEP 8 says 79 but
@@ -217,20 +182,7 @@ Key things to keep in mind include:
 - **Line separations** (2 blank lines around classes and functions, etc.)
 - **Order of import statements** (standard → third-party → local)
 
-—————————————————————————————————————————————————————————————————————
-
-> `2.` Always assume the user is stupid
-
-Special cases (almost) always exist. Make sure you take into account as many 
-input possibilities as you can, even those that anyone in their right mind 
-would never think of.
-
-—————————————————————————————————————————————————————————————————————
-
-> `3.` Don't be boring
-
-Give your code some _✨personality✨_. Avoid dull, flavorless code. You can 
-even add a little joke comment if your code starts to look sleep-inducing.
+Stay consistent with existing code styles.
 
 [^ TOC](#-table-of-contents)
 
@@ -301,5 +253,4 @@ GitHub, here are some links with information that might help:
 [repo-issues]: https://github.com/TheGittyPerson/ThePerson/issues
 [avail-tasks]: https://github.com/TheGittyPerson/ThePerson/issues?q=is%3Aissue%20state%3Aopen%20(no%3Aassignee%20OR%20label%3A%22%F0%9F%93%8C%20pinned%22)%20label%3Atask
 [repo-disc]: https://github.com/TheGittyPerson/ThePerson/discussions
-[coc]: /.github/CODE_OF_CONDUCT.md
-[pep-8]: https://peps.python.org/pep-0008/
+[pep 8]: https://peps.python.org/pep-0008/
