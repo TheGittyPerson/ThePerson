@@ -19,8 +19,6 @@ jobs:
           
           Key things to remember when contributing to this repo:
             - Avoid touching others' code when possible
-            - **Rebase > Merge**; When updating your PR branch, always use a rebase and resolve conflicts
-            - Try to follow PEP 8
             - Avoid using AI to generate code, comments, or issue/PR descriptions
 
         pr-message: >-
@@ -30,6 +28,4 @@ jobs:
           
           Key things to remember when contributing to this repo:
             - Avoid touching others' code when possible
-            - **Rebase > Merge**; When updating your PR branch, always use a rebase and resolve conflicts
-            - Try to follow PEP 8
             - Avoid using AI to generate code, comments, or issue/PR descriptions
