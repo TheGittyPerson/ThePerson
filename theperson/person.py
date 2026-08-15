@@ -519,3 +519,50 @@ class Person:
             self.physical.height += height_increment
 
         self.profile.age += increment
+
+    def birth(self,
+              baby_name: str | None = None,
+              gender: str | None = None,
+              sleep_delay: float = 0.0) -> Person:
+        """Simulate the birth of a child, returning a new newborn Person object.
+
+        Args:
+            baby_name: Optional name for the newborn baby.
+            gender: Optional gender for the newborn baby.
+            sleep_delay: Simulated delay in seconds for birth process. Defaults to 0.0.
+
+        Returns:
+            A new Person instance initialized with newborn attributes (age=0).
+        """
+        if sleep_delay > 0:
+            self.say("The delivery process has begun...")
+            time.sleep(sleep_delay)
+
+        self.mood.set_mood("excited", 0.9)
+        name_display = baby_name if baby_name is not None else "little one"
+        self.say(f"Welcome to the world, {name_display}!")
+
+        baby_profile = Profile(
+            name=baby_name,
+            age=0,
+            gender=gender,
+            nationality=self.profile.nationality
+        )
+        baby_physical = Physical(
+            height=0.5,
+            weight=3.5,
+            skin_tone=self.physical.skin_tone,
+            hair_color=self.physical.hair_color
+        )
+        baby_life_dates = LifeDates(
+            birthday_date=date.today()
+        )
+        baby_mood = Mood("happy", 0.5)
+
+        return Person(
+            profile=baby_profile,
+            physical=baby_physical,
+            life_dates=baby_life_dates,
+            mood=baby_mood
+        )
+
