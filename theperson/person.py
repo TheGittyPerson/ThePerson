@@ -557,3 +557,4 @@ class Person:
         self.increase_iq(iq_gain)
 
         self.professional.skills.append(topic)
+        
