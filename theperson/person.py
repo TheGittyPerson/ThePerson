@@ -535,7 +535,7 @@ class Person:
         """use learn for any topic and add that as a skill, and increase IQ.
         Args:
             topic: The topic being learned.
-            difficulty: Difficulty of the topic. Needs to be from scale of 1 to 5.
+            difficulty: Needs to be from scale of 1 to 5.
         
         Raises:
             ValueError: If the arguments have incorrect types.
@@ -557,6 +557,3 @@ class Person:
         self.increase_iq(iq_gain)
 
         self.professional.skills.append(topic)
-
-
-
