@@ -21,6 +21,7 @@ class Profile:
     age: int | None = None
     gender: str | None = None
     nationality: str | None = None
+    iq: int | float = 90
     hobbies: list[str] = field(default_factory=list)
 
 
@@ -519,3 +520,40 @@ class Person:
             self.physical.height += height_increment
 
         self.profile.age += increment
+
+    def increase_iq(self, increment_amount: float | int = 1) -> None:
+        """Increase the person's IQ by the given amount."""
+
+        if not isinstance(increment_amount, (int, float)):
+            raise TypeError("IQ needs to be float or int.")
+        if increment_amount < 0:
+            raise ValueError("IQ cannot be negative.")
+
+        self.profile.iq += increment_amount
+
+    def learn(self, topic: str, difficulty: int = 1) -> None:
+        """use learn for any topic and add that as a skill, and increase IQ.
+        Args:
+            topic: The topic being learned.
+            difficulty: Needs to be from scale of 1 to 5.
+        
+        Raises:
+            ValueError: If the arguments have incorrect types.
+            TypeError: If difficulty is not positive.
+        """
+
+        if topic is None:
+            raise ValueError("No Topic is provided.")
+        if not isinstance(topic, str):
+            raise TypeError("Topic must be a string.")
+
+        if not isinstance(difficulty, (int, float)):
+            raise TypeError("Difficulty must be an float or int.")
+        if difficulty < 1 or difficulty > 5:
+            raise ValueError("Provide difficulty on scale of 1 to 5.")
+        
+        iq_gain = difficulty * 0.5 
+
+        self.increase_iq(iq_gain)
+
+        self.professional.skills.append(topic)
