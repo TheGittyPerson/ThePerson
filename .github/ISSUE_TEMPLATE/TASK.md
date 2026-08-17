@@ -5,7 +5,7 @@ title: 'TASK: Task title here'
 labels: ['good first issue', 'help wanted', task]
 ---
 
-**Leave a comment if you wish to work on this task!**
+**Leave a comment if you want to work on this task!**
 
 **Difficulty:** 
 
@@ -16,7 +16,7 @@ labels: ['good first issue', 'help wanted', task]
 ### PR steps:
 1. Fork this repo
 2. Clone the forked repo
-3. **Create a new branch**: name the branch `CATEGORY/BRANCHNAME`
+3. **Create a new branch** and name it `CATEGORY/BRANCHNAME`
 4. Push commits to your remote fork
 5. Create a PR titled ``TASK: TASKTITLEHERE (#ISSUENUMBERHERE)``
 6. At the end of the PR description, add `Closes #ISSUENUMBERHERE`
