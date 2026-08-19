@@ -77,6 +77,7 @@ class Person:
         self.mood = mood if mood is not None else Mood()
         self.goals = goals if goals is not None else Goals()
         self.inventory = inventory if inventory is not None else Inventory()
+        self._memory: str | None = None
     
     def greet(self, target: Person | None = None) -> None:
         """Do a simple greeting and introduction.
@@ -157,17 +158,17 @@ class Person:
 
         Args:
             emoji_type: The type of crying emoji to use. Options are:
-                - "loudly": 😭 (loudly crying face)
-                - "tired": 😫 (tired face)
-                - "smile": 🥲 (smiling face with tear)
-                - "sad": 😢 (crying face)
+                - "loudly": f62d (loudly crying face)
+                - "tired": f62b (tired face)
+                - "smile": f972 (smiling face with tear)
+                - "sad": f622 (crying face)
                 If None, a random emoji is chosen.
         """
         crying_emojis = {
-            "loudly": "\U0001f62d",  # 😭 loudly crying face
-            "tired": "\U0001f62b",  # 😫 tired face
-            "smile": "\U0001f972",  # 🥲 smiling face with tear
-            "sad": "\U0001f622",  # 😢 crying face
+            "loudly": "\U0001f62d",  # f62d loudly crying face
+            "tired": "\U0001f62b",  # f62b tired face
+            "smile": "\U0001f972",  # f972 smiling face with tear
+            "sad": "\U0001f622",  # f622 crying face
         }
         
         emoji = crying_emojis.get(
@@ -430,10 +431,10 @@ class Person:
             TypeError: if smile_type is given but not a str.
         """
         smiling_emojis = {
-            "small": "\U0001F642",  # 🙂 slightly smiling face
-            "smile": "\U0001F60A",  # 😊 smiling face, smiling eyes
-            "grin": "\U0001F601",  # 😁 grinning face with smiling eyes
-            "wide": "\U0001F604",  # 😄 open mouth with smiling eyes
+            "small": "\U0001F642",  # f642 slightly smiling face
+            "smile": "\U0001F60A",  # f60a smiling face, smiling eyes
+            "grin": "\U0001F601",  # f601 grinning face with smiling eyes
+            "wide": "\U0001F604",  # f604 open mouth with smiling eyes
         }
         
         if smile_type is not None and not isinstance(smile_type, str):
@@ -461,10 +462,10 @@ class Person:
             TypeError: if laugh_type is given but not a str.
         """
         laughing_emojis = {
-            "light": "\U0001F606",  # 😆 grinning squinting face
-            "tears": "\U0001F602",  # 😂 face with tears of joy
-            "loud": "\U0001F605",  # 😅 grinning face with sweat
-            "rofl": "\U0001F923",  # 🤣 rolling on the floor laughing
+            "light": "\U0001F606",  # f606 grinning squinting face
+            "tears": "\U0001F602",  # f602 face with tears of joy
+            "loud": "\U0001F605",  # f605 grinning face with sweat
+            "rofl": "\U0001F923",  # f923 rolling on the floor laughing
         }
 
         if laugh_type is not None and not isinstance(laugh_type, str):
@@ -557,3 +558,43 @@ class Person:
         self.increase_iq(iq_gain)
 
         self.professional.skills.append(topic)
+
+    def remember(self, memory: str) -> None:
+        """Store a string in the person's memory.
+
+        Args:
+            memory: The string memory to store.
+
+        Raises:
+            TypeError: If memory is not a string.
+        """
+        if not isinstance(memory, str):
+            raise TypeError(
+                f"'memory' must be a str, got {type(memory).__name__}"
+            )
+        self._memory = memory
+
+    def recall(self, say: bool = False) -> str | None:
+        """Recall the stored memory.
+
+        Args:
+            say: If True, say the memory out loud before returning it.
+                 Defaults to False.
+
+        Returns:
+            The stored memory string, or None if no memory is set.
+
+        Raises:
+            TypeError: If say is not a bool.
+        """
+        if not isinstance(say, bool):
+            raise TypeError(
+                f"'say' must be a bool, got {type(say).__name__}"
+            )
+        if say and self._memory is not None:
+            self.say(self._memory)
+        return self._memory
+
+    def forget(self) -> None:
+        """Clear the person's stored memory."""
+        self._memory = None
