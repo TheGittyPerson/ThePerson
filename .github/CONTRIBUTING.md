@@ -12,42 +12,42 @@ let your creativity loose.
 
 ---
 
-## 📝 Table of Contents
+## Table of Contents
 
-- [✨ Contributions You Can Make](#-contributions-you-can-make)
-- [📐 Requirements](#-requirements)
-- [🚦 Opening Issues](#-opening-issues)
-  - [🐛 Reporting Bugs](#-reporting-bugs)
-  - [☝️ Suggesting Features](#-suggesting-features)
-- [🧭 Pull Request Guidelines](#-pull-request-guidelines)
-- [📋 Task Issues](#-task-issues)
-- [🧑‍💻 Code Guidelines](#-code-guidelines)
-- [🏡 TheTown](#-thetown)
-- [🤖 AI-Assisted Contributions](#-ai-assisted-contributions)
-- [🧰 Making Your First Contribution](#-making-your-first-contribution)
+- [✨ Contributions You Can Make](#contributions-you-can-make)
+- [📐 Requirements](#requirements)
+- [🧑‍💻 Code Guidelines](#code-guidelines)
+- [📋 Tasks](#tasks)
+- [🧭 Pull Request Guidelines](#pull-request-guidelines)
+- [🚦 Opening Issues](#opening-issues)
+  - [🐛 Reporting Bugs](#reporting-bugs)
+  - [☝️ Suggesting Features](#suggesting-features)
+- [🏡 TheTown](#thetown-)
+- [🤖 AI-Assisted Contributions](#ai-assisted-contributions)
+- [🧰 Making Your First Contribution](#making-your-first-contribution)
 
 ---
 
-## ✨ Contributions You Can Make
+## Contributions You Can Make
 
 There are many ways you can contribute: 
-- [Suggesting or adding a feature](#-suggesting-features)
-- [Finding and reporting bugs](#-reporting-bugs)
+- [Completing tasks](#tasks)
+- [Making your own tasks][issue #144]
+- [Joining TheTown](#thetown-)
+- [Suggesting or adding a feature](#suggesting-features)
+- [Finding and reporting bugs](#reporting-bugs)
 - Reformatting, refactoring, or enhancing code
 - Improving documentation
-- [Completing tasks](#-task-issues)
-- [Joining TheTown](#-thetown)
 - [Participating in discussions][discussions]
 - Helping to review or give feedback to pull requests or issues
-- Suggesting task issues (by opening a discussion)
 - ...and more!
 
 Any addition to the project will be very much appreciated, even small or minor 
 ones.
 
-[^ TOC](#-table-of-contents)
+[🔼 TOC](#table-of-contents)
 
-## 📐 Requirements
+## Requirements
 
 - **Python 3.12 or above** (recommended)
 - A recognized IDE / code editor, for example:
@@ -57,44 +57,54 @@ ones.
   - **NOT** the GitHub web editor or a basic text editor.
   - **NOT** IDLE or Vim/Neovim.
 
-[^ TOC](#-table-of-contents)
+[🔼 TOC](#table-of-contents)
 
 ---
 
-## 🚦 Opening Issues
+## Code Guidelines
 
-**We highly recommend [opening an issue][issues]** before creating a 
-pull request. This is to ensure all changes are discussed properly (and you 
-don't waste your time creating a PR that ends up getting closed). 
+Follow [PEP 8] as much as possible:
 
-This is also to minimize automatically-generated pull requests created by 
-automated bot accounts.
+Key things to keep in mind include:
+- **Line lengths** (try to keep lines **below 80 characters**; PEP 8 says 79 but
+  both work)
+- **Naming conventions** (module, variable, class, and function names)
+  - `variable_must_be_named_like_this`
+  - `functions_too`
+  - `also_modules`
+  - `ClassesMustBeNamedLikeThis`
+- **Docstring and comments formatting**
+- **Line separations** (2 blank lines around classes and functions, etc.)
+- **Order of import statements** (standard → third-party → local)
 
-### 🐛 Reporting Bugs
+Try to also stay consistent with existing code styles and formats already in 
+the repo.
 
-To report a bug:
-1. On the repository on GitHub, go to the [Issues] tab.
-2. Select "New issue".
-3. **Template selection: Choose "Bug report"**.
-4. Describe the issue thoroughly, using the template as a guide
-5. Submit the issue.
-
-### ☝️ Suggesting Features
-
-To suggest a feature:
-1. On the repository on GitHub, go to the [Issues] tab.
-2. Select "New issue".
-3. **Template selection: Choose "Feature request"**
-4. Describe the feature thoroughly, using the template as a guide.
-5. Submit the issue.
-
-Or, add a comment under a [discussion][discussions] describing the feature.
-
-[^ TOC](#-table-of-contents)
+[🔼 TOC](#table-of-contents)
 
 ---
 
-## 🧭 Pull Request Guidelines
+## Tasks
+
+Some issues will be opened in the [Issues] page on GitHub, labeled `task`. 
+
+**If you are interested in completing a task**: 
+1. Make sure you give the instructions in the task description a proper read.
+2. **Leave a comment requesting assignment for the issue**.
+3. Wait for a thumbs-up from a maintainer.
+4. Follow the steps above to create a fork and PR with your changes.
+5. Code away!
+
+You can also make your own tasks! Check out [Issue #144] for more info.
+
+> Click [HERE][avail-tasks] to see available tasks (link filtered for pinned 
+> tasks or open tasks with no assignees)
+
+[🔼 TOC](#table-of-contents)
+
+---
+
+## Pull Request Guidelines
 
 1. Create a fork of [repository].
 2. Clone the forked repository to your local machine.
@@ -123,51 +133,37 @@ Or, add a comment under a [discussion][discussions] describing the feature.
 5. Push commits to GitHub (if you have made changes locally on your machine).
 6. Create and submit a pull request.
 
-[^ TOC](#-table-of-contents)
+[🔼 TOC](#table-of-contents)
 
-## 📋 Task Issues
+## Opening Issues
 
-Some issues will be opened in the [Issues] page on GitHub, labeled `task`. 
+**We highly recommend [opening an issue][issues]** before creating a 
+pull request. This is to ensure all ideas are discussed properly before 
+implementation and to minimize AI-generated pull requests.
 
-**If you are interested in completing a task**: 
-1. Make sure you give the instructions in the task description a proper read.
-2. **Leave a comment requesting assignment for the issue**.
-3. Wait for a thumbs-up from a maintainer.
-4. Follow the steps above to create a fork and PR with your changes.
-5. Code away!
+### Reporting Bugs
 
-**When writing the pull request**:
-- Write your PR title like so: `TASK: <task title> (#<issue number>)`
-- In your PR description, **ensure you use an issue-closing keyword phrase**.
-  - e.g., `Closes #123`, where `#123` is the issue number.
+To report a bug:
+1. On the repository on GitHub, go to the [Issues] tab.
+2. Select "New issue".
+3. **Choose "Bug report" as the template**.
+4. Describe the issue thoroughly, using the template as a guide
+5. Submit the issue.
 
-> Click [HERE][avail-tasks] to see available tasks (link filtered for pinned 
-> tasks or open tasks with no assignees)
+### Suggesting Features
 
-[^ TOC](#-table-of-contents)
+To suggest a feature:
+1. On the repository on GitHub, go to the [Issues] tab.
+2. Select "New issue".
+3. ** Choose "Feature request" as the template**
+4. Describe the feature thoroughly, using the template as a guide.
+5. Submit the issue.
 
-## 🧑‍💻 Code Guidelines
+Or, add a comment under a [discussion][discussions] describing the feature.
 
-Follow [PEP 8] as much as possible:
+[🔼 TOC](#table-of-contents)
 
-Key things to keep in mind include:
-- **Line lengths** (try to keep lines **below 80 characters**; PEP 8 says 79 but
-  both work)
-- **Naming conventions** (module, variable, class, and function names)
-  - `variable_must_be_named_like_this`
-  - `functions_too`
-  - `also_modules`
-  - `ClassesMustBeNamedLikeThis`
-- **Docstring and comments formatting**
-- **Line separations** (2 blank lines around classes and functions, etc.)
-- **Order of import statements** (standard → third-party → local)
-
-Try to also stay consistent with existing code styles and formats already in 
-the repo.
-
-[^ TOC](#-table-of-contents)
-
-## 🏡 TheTown
+## TheTown 🏡
 
 In the root directory of this repo, you will see `the_town.py`. Add yourself 
 as a `Person` instance to be part of TheTown!
@@ -187,18 +183,13 @@ Pull request steps:
 You can also open a PR to update, change, or remove any of the code **you** 
 added previously.
 
-[^ TOC](#-table-of-contents)
+[🔼 TOC](#table-of-contents)
 
-## 🤖 AI-Assisted Contributions
+## AI-Assisted Contributions
 
 AI tools can be helpful during development, and contributors are allowed to use
 them as **assistive tools**. However, this project does **not accept 
 contributions that are noticeably and mostly AI-generated**.
-
-When submitting a pull request **a human must be responsible** for the work 
-submitted. **You must personally review, understand, and test** any code you 
-submit and be able to **explain your changes and respond to review 
-feedback**.
 
 Pull requests that appear to be:
 - primarily AI-generated (including PR descriptions or comments),
@@ -206,9 +197,9 @@ Pull requests that appear to be:
 - or lacking human oversight
 will be **closed without merging**.
 
-[^ TOC](#-table-of-contents)
+[🔼 TOC](#table-of-contents)
 
-## 🧰 Making Your First Contribution
+## Making Your First Contribution
 
 If you're new here or are not familiar with contributing to repositories on 
 GitHub, here are some links with information that might help:
@@ -217,10 +208,11 @@ GitHub, here are some links with information that might help:
 - https://docs.github.com/get-started/exploring-projects-on-github/contributing-to-open-source
 - https://github.com/firstcontributions/first-contributions
 
-[^ TOC](#-table-of-contents)
+[🔼 TOC](#table-of-contents)
 
 [repository]: https://github.com/TheGittyPerson/ThePerson
 [issues]: https://github.com/TheGittyPerson/ThePerson/issues
+[issue #144]: https://github.com/TheGittyPerson/ThePerson/issues/144
 [avail-tasks]: https://github.com/TheGittyPerson/ThePerson/issues?q=is%3Aissue%20state%3Aopen%20(no%3Aassignee%20OR%20label%3A%22%F0%9F%93%8C%20pinned%22)%20label%3Atask
 [discussions]: https://github.com/TheGittyPerson/ThePerson/discussions
 [pep 8]: https://peps.python.org/pep-0008/
