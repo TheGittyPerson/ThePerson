@@ -1,6 +1,6 @@
 ---
 name: Task
-about: For maintainers only; Create a task to invite contributors
+about: Create a task for contributors to complete
 title: 'TASK: '
 labels: ['good first issue', 'help wanted', task]
 ---
@@ -18,7 +18,7 @@ labels: ['good first issue', 'help wanted', task]
 2. Clone the forked repo
 3. **Create a new branch** and name it `CATEGORY/BRANCHNAME`
 4. Push commits to your remote fork
-5. Create a PR titled ``TASK: TASKTITLEHERE (#ISSUENUMBERHERE)``
+5. Create a pull request titled ``TASK: TASKTITLEHERE (#ISSUENUMBERHERE)``
 6. At the end of the PR description, add `Closes #ISSUENUMBERHERE`
 7. Submit the PR (Ensure you allow maintainers to edit)
 
@@ -28,8 +28,7 @@ Please make sure you have read the [Contributing Guidelines] before working.
 
 Feel free to ask any questions here!
 
-If you are interested in working on this task,
-**please leave a comment requesting assignment** to explicitly let others know the task is taken and prevent duplicate PRs.
+If you are interested in working on this task, **please leave a comment requesting assignment** to explicitly let others know the task is taken and prevent duplicate PRs.
 
 [Contributing Guidelines]: 
 https://github.com/TheGittyPerson/ThePerson/blob/main/.github/CONTRIBUTING.md
