@@ -106,7 +106,7 @@ If you enjoyed contributing to this project or appreciate the concept, consider
 [repo]: https://github.com/TheGittyPerson/ThePerson
 [repo-disc]: https://github.com/TheGittyPerson/ThePerson/discussions
 [repo-issues]: https://github.com/TheGittyPerson/ThePerson/issues
-[avail-tasks]: https://github.com/TheGittyPerson/ThePerson/issues?q=is%3Aissue%20state%3Aopen%20(no%3Aassignee%20OR%20label%3A%22%F0%9F%93%8C%20pinned%22)%20label%3Atask
+[avail-tasks]: https://github.com/TheGittyPerson/ThePerson/issues/views/12892
 [contrib]: /.github/CONTRIBUTING.md
 [contrib-tasks]: /.github/CONTRIBUTING.md#tasks
 [contrib-thetown]: /.github/CONTRIBUTING.md#thetown-

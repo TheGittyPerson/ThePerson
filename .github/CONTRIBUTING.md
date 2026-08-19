@@ -213,6 +213,6 @@ GitHub, here are some links with information that might help:
 [repository]: https://github.com/TheGittyPerson/ThePerson
 [issues]: https://github.com/TheGittyPerson/ThePerson/issues
 [issue #144]: https://github.com/TheGittyPerson/ThePerson/issues/144
-[avail-tasks]: https://github.com/TheGittyPerson/ThePerson/issues?q=is%3Aissue%20state%3Aopen%20(no%3Aassignee%20OR%20label%3A%22%F0%9F%93%8C%20pinned%22)%20label%3Atask
+[avail-tasks]: https://github.com/TheGittyPerson/ThePerson/issues/views/12892
 [discussions]: https://github.com/TheGittyPerson/ThePerson/discussions
 [pep 8]: https://peps.python.org/pep-0008/
