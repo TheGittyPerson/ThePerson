@@ -19,7 +19,7 @@ jobs:
         repo-token: ${{ secrets.GITHUB_TOKEN }}
         days-before-issue-stale: 40
         days-before-pr-stale: 20
-        exempt-issue-labels: "📌 pinned,security,in-progress"
+        exempt-issue-labels: "task,📌 pinned,security,in-progress"
         exempt-pr-labels: "📌 pinned,security,in-progress"
         stale-issue-message: |
           This issue has been inactive for some time, and will therefore be marked as 'stale'.
