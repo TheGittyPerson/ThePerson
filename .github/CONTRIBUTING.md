@@ -97,8 +97,7 @@ Some issues will be opened in the [Issues] page on GitHub, labeled `task`.
 
 You can also make your own tasks! Check out [Issue #144] for more info.
 
-> Click [HERE][avail-tasks] to see available tasks (link filtered for pinned 
-> tasks or open tasks with no assignees)
+> Click [HERE][avail-tasks] to see available tasks
 
 [🔼 TOC](#table-of-contents)
 
