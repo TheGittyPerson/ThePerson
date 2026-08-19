@@ -1,7 +1,7 @@
 ---
 name: Task
 about: For maintainers only; Create a task to invite contributors
-title: 'TASK: Task title here'
+title: 'TASK: '
 labels: ['good first issue', 'help wanted', task]
 ---
 
@@ -9,7 +9,7 @@ labels: ['good first issue', 'help wanted', task]
 
 **Difficulty:** 
 
-**TODO**:
+### TODO:
 - 
 - Remember to add type hints and docstrings where necessary and follow [PEP 8]
 
