@@ -19,28 +19,23 @@
 inside your computer. It features a central `Person` class that developers 
 can expand with new attributes, behaviors, and quirks.
 
-`theperson/person.py` is the heart of the project. Inside the script is a 
-`Person` class where you can build in.
-
-Our goal is to simulate a human in Python with plenty of features (and create a 
-super long script) while providing a **learning opportunity** for beginners 
-and a fun activity for experienced devs, and **spark imagination and 
-creativity**. We also aim to keep our community safe and engaging for everyone.
+Our main goal is to help open-source developers, no matter beginner or 
+experienced, to learn OOP and collaborate with other Python programmers 
+while building something never been built before on GitHub (I think).
 
 ---
 
 ## Why Contribute?
 - This project is beginner-friendly with plenty of support for newcomers.
-- The best way to learn OOP is by doing.
+- The best way to learn OOP, and anything else, is by doing.
 - There are infinite possibilities and always more you can add to the project.
 
-Read our [Contributing Guidelines][contrib] to get started.
+Read our [Contributing Guidelines][contrib] to get started!
 
 ## 📋 Completing Tasks
 
-Completing tasks is the main feature of this repository. You can help create
-tasks by tagging @TheGittyPerson in any issue or pull request and pitching 
-your idea.
+Completing tasks is the main feature of this repository. You can also help 
+create your own tasks for others to complete (see [Issue #144]).
 
 You can find tasks under the [Issues][repo-issues] tab on GitHub. These are 
 issues labeled `task` and are contributions you can make with specific 
@@ -62,7 +57,7 @@ following the guidelines under "TheTown" will be closed.
 
 ---
 
-## 💻 How to Use
+## How to Use
 
 To try using the project yourself on your computer, follow these steps.
 
@@ -77,7 +72,7 @@ On the [GitHub page][repo]:
 Before trying this out:
 1. Ensure you have **Python installed on your computer**. (Install the latest 
    version [here][python-download] and follow installation procedures)
-2. Follow the steps [here](#-how-to-use) to download the program.
+2. Follow the steps [here](#how-to-use) to download the program.
 
 After downloading the source code:
 1. **Open `the_town.py` with IDLE** (the code editor that comes with your 
@@ -106,16 +101,17 @@ This project is licensed under the [MIT License](LICENSE.txt).
 ---
 
 If you enjoyed contributing to this project or appreciate the concept, consider 
-[dropping us a star][repo] to help others discover it! 🙏
+[dropping us a star][repo] to help others discover it — 🙏
 
 [repo]: https://github.com/TheGittyPerson/ThePerson
 [repo-disc]: https://github.com/TheGittyPerson/ThePerson/discussions
 [repo-issues]: https://github.com/TheGittyPerson/ThePerson/issues
 [avail-tasks]: https://github.com/TheGittyPerson/ThePerson/issues?q=is%3Aissue%20state%3Aopen%20(no%3Aassignee%20OR%20label%3A%22%F0%9F%93%8C%20pinned%22)%20label%3Atask
 [contrib]: /.github/CONTRIBUTING.md
-[contrib-tasks]: /.github/CONTRIBUTING.md#-task-issues
-[contrib-thetown]: /.github/CONTRIBUTING.md#-thetown
-[contrib-ai]: /.github/CONTRIBUTING.md#-ai-assisted-contributions
+[contrib-tasks]: /.github/CONTRIBUTING.md#tasks
+[contrib-thetown]: /.github/CONTRIBUTING.md#thetown-
+[contrib-ai]: /.github/CONTRIBUTING.md#ai-assisted-contributions
+[issue #144]: https://github.com/TheGittyPerson/ThePerson/issues/144
 [coc]: /.github/CODE_OF_CONDUCT.md
 [profile]: https://github.com/TheGittyPerson
 [python-download]: https://www.python.org/downloads/
