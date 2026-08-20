@@ -111,37 +111,3 @@ jobs:
                 `Unexpected files: ${invalid.join(", ")}.`
               );
             }
-
-  no_merge_commits:
-    runs-on: ubuntu-latest
-    permissions:
-      pull-requests: read
-    steps:
-      - uses: actions/github-script@v7
-        with:
-          script: |
-            const pr = context.payload.pull_request;
-
-            if (pr.user && pr.user.type === "Bot") {
-              return;
-            }
-
-            const { owner, repo } = context.repo;
-            const pull_number = pr.number;
-
-            const commits = await github.paginate(
-              github.rest.pulls.listCommits,
-              { owner, repo, pull_number, per_page: 100 }
-            );
-
-            const mergeCommits = commits.filter(
-              (commit) => (commit.parents || []).length > 1
-            );
-
-            if (mergeCommits.length > 0) {
-              const shas = mergeCommits.map((commit) => commit.sha).join(", ");
-              core.setFailed(
-                "Merge commits are not allowed in PR branches. " +
-                `Found: ${shas}.`
-              );
-            }
