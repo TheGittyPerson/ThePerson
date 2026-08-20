@@ -24,7 +24,7 @@ class Profile:
     iq: int | float = 90
     hobbies: list[str] = field(default_factory=list)
 
-    def change_name(self, name: str ) -> None:
+    def change_name(self, name: str) -> None:
         """ Changes person name.
 
         Args:
@@ -34,12 +34,11 @@ class Profile:
             TypeError: If 'name' is not a str
         """
 
-        if not isinstance(name,str):
+        if not isinstance(name, str):
             raise TypeError("'name' must be a str")
         if name:
             self.name = name
             print(f'My name is now {self.name}')
-
 
 
 @dataclass
