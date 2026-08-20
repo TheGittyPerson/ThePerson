@@ -108,7 +108,8 @@ class Person:
         if name and type(name) == str:
             self.profile.name = name
 
-
+        if name:
+            self.say(f'My name is now {self.profile.name}')
 
 
 
