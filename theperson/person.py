@@ -24,6 +24,22 @@ class Profile:
     iq: int | float = 90
     hobbies: list[str] = field(default_factory=list)
 
+    def change_name(self, name: str) -> None:
+        """ Changes person name.
+
+        Args:
+            name: The name to be changed to
+
+        Raises:
+            TypeError: If 'name' is not a str
+        """
+
+        if not isinstance(name, str):
+            raise TypeError("'name' must be a str")
+        if name:
+            self.name = name
+            print(f'My name is now {self.name}')
+
 
 @dataclass
 class Physical:
@@ -97,7 +113,8 @@ class Person:
             self.say(
                 f"Hello {target.profile.name}! My name is {self.profile.name}."
             )
-    
+
+
     @staticmethod
     def say(*things: object,
             repeat: int = 1,
