@@ -97,7 +97,21 @@ class Person:
             self.say(
                 f"Hello {target.profile.name}! My name is {self.profile.name}."
             )
-    
+
+    def change_name(self, name: str ) -> None:
+        """ Changes person name.
+
+        Args:
+            name: The name to be changed to
+        """
+
+        if name and type(name) == str:
+            self.profile.name = name
+
+
+
+
+
     @staticmethod
     def say(*things: object,
             repeat: int = 1,
