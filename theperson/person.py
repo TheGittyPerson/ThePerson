@@ -103,10 +103,15 @@ class Person:
 
         Args:
             name: The name to be changed to
+
+        Raises:
+            TypeError: If 'name' is not a str
         """
 
         if name and isinstance(name, str):
             self.profile.name = name
+        if name is not isinstance(name, str):
+            raise TypeError("'name' must be a str")
 
         if name:
             self.say(f'My name is now {self.profile.name}')
