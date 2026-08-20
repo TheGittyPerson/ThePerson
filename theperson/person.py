@@ -44,7 +44,6 @@ class Profile:
 
 
 
-
 @dataclass
 class Physical:
     """Physical characteristics such as height, weight and appearance."""
