@@ -97,8 +97,7 @@ Some issues will be opened in the [Issues] page on GitHub, labeled `task`.
 
 You can also make your own tasks! Check out [Issue #144] for more info.
 
-> Click [HERE][avail-tasks] to see available tasks (link filtered for pinned 
-> tasks or open tasks with no assignees)
+> Click [HERE][avail-tasks] to see available tasks
 
 [🔼 TOC](#table-of-contents)
 
@@ -213,6 +212,6 @@ GitHub, here are some links with information that might help:
 [repository]: https://github.com/TheGittyPerson/ThePerson
 [issues]: https://github.com/TheGittyPerson/ThePerson/issues
 [issue #144]: https://github.com/TheGittyPerson/ThePerson/issues/144
-[avail-tasks]: https://github.com/TheGittyPerson/ThePerson/issues?q=is%3Aissue%20state%3Aopen%20(no%3Aassignee%20OR%20label%3A%22%F0%9F%93%8C%20pinned%22)%20label%3Atask
+[avail-tasks]: https://github.com/TheGittyPerson/ThePerson/issues/views/12892
 [discussions]: https://github.com/TheGittyPerson/ThePerson/discussions
 [pep 8]: https://peps.python.org/pep-0008/

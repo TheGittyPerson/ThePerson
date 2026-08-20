@@ -32,7 +32,7 @@ while building something never been built before on GitHub (I think).
 
 Read our [Contributing Guidelines][contrib] to get started!
 
-## 📋 Completing Tasks
+## Completing Tasks
 
 Completing tasks is the main feature of this repository. You can also help 
 create your own tasks for others to complete (see [Issue #144]).
@@ -44,10 +44,9 @@ instructions and more guidance.
 Read the [Contributing Guidelines][contrib-tasks] if you're interested in 
 working on a task.
 
-> Click [HERE][avail-tasks] to see available tasks (link filtered for pinned 
-> tasks or open tasks with no assignees)
+> Click [HERE][avail-tasks] to see available tasks
 
-## 🏡 Be Part of TheTown!
+## Be Part of TheTown! 🏡
 
 In the root directory of this repo, you will see `the_town.py`. Add yourself 
 as an instance of `Person`!
@@ -89,12 +88,12 @@ coding in general**, feel free to **open a [Discussion][repo-disc]** in this
 repository's GitHub page — experienced developers in our community will be 
 happy to help you out.
 
-## ❓ Questions/Requests
+## Questions/Requests
 
 If you have a question or something to say, open a discussion [here]
 [repo-disc], or leave a comment in an existing discussion.
 
-## 📜 License
+## License
 
 This project is licensed under the [MIT License](LICENSE.txt).
 
@@ -106,12 +105,9 @@ If you enjoyed contributing to this project or appreciate the concept, consider
 [repo]: https://github.com/TheGittyPerson/ThePerson
 [repo-disc]: https://github.com/TheGittyPerson/ThePerson/discussions
 [repo-issues]: https://github.com/TheGittyPerson/ThePerson/issues
-[avail-tasks]: https://github.com/TheGittyPerson/ThePerson/issues?q=is%3Aissue%20state%3Aopen%20(no%3Aassignee%20OR%20label%3A%22%F0%9F%93%8C%20pinned%22)%20label%3Atask
+[avail-tasks]: https://github.com/TheGittyPerson/ThePerson/issues/views/12892
 [contrib]: /.github/CONTRIBUTING.md
 [contrib-tasks]: /.github/CONTRIBUTING.md#tasks
 [contrib-thetown]: /.github/CONTRIBUTING.md#thetown-
-[contrib-ai]: /.github/CONTRIBUTING.md#ai-assisted-contributions
 [issue #144]: https://github.com/TheGittyPerson/ThePerson/issues/144
-[coc]: /.github/CODE_OF_CONDUCT.md
-[profile]: https://github.com/TheGittyPerson
 [python-download]: https://www.python.org/downloads/
