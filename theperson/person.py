@@ -40,7 +40,7 @@ class Profile:
             raise TypeError("'name' must be a str")
 
         if name:
-            self.say(f'My name is now {self.name}')
+            print(f'My name is now {self.name}')
 
 
 
