@@ -105,7 +105,7 @@ class Person:
             name: The name to be changed to
         """
 
-        if name and type(name) == str:
+        if name and isinstance(name, str):
             self.profile.name = name
 
         if name:
