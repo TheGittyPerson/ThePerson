@@ -34,12 +34,10 @@ class Profile:
             TypeError: If 'name' is not a str
         """
 
-        if name and isinstance(name, str):
-            self.name = name
-        if name is not isinstance(name, str):
+        if not isinstance(name,str):
             raise TypeError("'name' must be a str")
-
         if name:
+            self.name = name
             print(f'My name is now {self.name}')
 
 
