@@ -25,7 +25,7 @@ class Profile:
     hobbies: list[str] = field(default_factory=list)
 
     def change_name(self, name: str) -> None:
-        """ Changes person name.
+        """Changes person name.
 
         Args:
             name: The name to be changed to
@@ -113,7 +113,6 @@ class Person:
             self.say(
                 f"Hello {target.profile.name}! My name is {self.profile.name}."
             )
-
 
     @staticmethod
     def say(*things: object,
