@@ -192,6 +192,18 @@ class Person:
         )
         print(emoji)
     
+    @property
+    def is_adult(self) -> bool:
+        """Check if the person is an adult (18 years or older).
+
+        Returns:
+            bool: True if the person is 18 or older,
+                  False otherwise (or if age is not set).
+        """
+        if self.profile.age is None:
+            return False
+        return self.profile.age >= 18
+
     def introduce(self) -> None:
         """Print a full self-introduction using the person's attributes."""
         parts = []
