@@ -197,7 +197,8 @@ class Person:
         """Check if the person is an adult (18 years or older).
 
         Returns:
-            bool: True if the person is 18 or older, False otherwise (or if age is not set).
+            bool: True if the person is 18 or older,
+                  False otherwise (or if age is not set).
         """
         if self.profile.age is None:
             return False
