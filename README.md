@@ -12,7 +12,7 @@
 ![Top language](https://img.shields.io/github/languages/top/TheGittyPerson/ThePerson)
 ![Open-Source](https://img.shields.io/badge/open-source-blue)
 ![Code size in bytes](https://img.shields.io/github/languages/code-size/TheGittyPerson/ThePerson)
-![Branch Status](https://img.shields.io/github/checks-status/TheGittyPerson/ThePerson/main)
+![Branch Status](https://img.shields.io/github/check-suites/TheGittyPerson/ThePerson/main)
 ![License](https://img.shields.io/github/license/TheGittyPerson/ThePerson)
 
 **ThePerson is an open-source Python simulation of a person** living 
