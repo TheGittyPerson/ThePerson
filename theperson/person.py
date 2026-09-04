@@ -95,7 +95,10 @@ class Person:
         self.goals = goals if goals is not None else Goals()
         self.inventory = inventory if inventory is not None else Inventory()
     
-    def greet(self, target: Person | None = None, use_nickname: bool = False) -> None:
+    def greet(
+            self,
+            target: Person | None = None,
+            use_nickname: bool = False) -> None:
         """Do a simple greeting and introduction.
 
         Args:
@@ -114,21 +117,34 @@ class Person:
             else:
                 self.say(f"Hello! My name is {self.profile.name}.")
         else:
-            if use_nickname and self.profile.nickname is not None  and target.profile.nickname is not None:
+            if (
+                    use_nickname
+                    and self.profile.nickname is not None
+                    and target.profile.nickname is not None):
                 self.say(
-                    f"Hello {target.profile.nickname}! My name is {self.profile.nickname}."
+                    f"Hello {target.profile.nickname}! "
+                    f"My name is {self.profile.nickname}."
                 )
-            elif use_nickname and self.profile.nickname is not None and target.profile.nickname is None:
+            elif (
+                    use_nickname
+                    and self.profile.nickname is not None
+                    and target.profile.nickname is None):
                 self.say(
-                    f"Hello {target.profile.name}! My name is {self.profile.nickname}."
+                    f"Hello {target.profile.name}! "
+                    f"My name is {self.profile.nickname}."
                 )
-            elif use_nickname and self.profile.nickname is None and target.profile.nickname is not None:
+            elif (
+                    use_nickname
+                    and self.profile.nickname is None
+                    and target.profile.nickname is not None):
                 self.say(
-                    f"Hello {target.profile.nickname}! My name is {self.profile.name}."
+                    f"Hello {target.profile.nickname}! "
+                    f"My name is {self.profile.name}."
                 )
             else:
                 self.say(
-                    f"Hello {target.profile.name}! My name is {self.profile.name}."
+                    f"Hello {target.profile.name}! "
+                    f"My name is {self.profile.name}."
                 )
 
     @staticmethod
@@ -291,23 +307,33 @@ class Person:
         if target is not None:
             if use_nickname and target.profile.nickname is not None:
                 default_message = (
-                    message or f"Happy {day.capitalize()}, {target.profile.nickname}! "
-                            f"\U0001f389"
+                    message
+                    or f"Happy {day.capitalize()}, "
+                       f"{target.profile.nickname}! "
+                       f"\U0001f389"
                 )
-                unknown_message = f"I don't know {target.profile.nickname}'s {day}..."
+                unknown_message = (
+                    f"I don't know {target.profile.nickname}'s "
+                    f"{day}..."
+                )
                 not_today_message = (
-                    f"Today is not {target.profile.nickname}'s {day} yet, but it's "
-                    f"coming soon!"
+                    f"Today is not {target.profile.nickname}'s "
+                    f"{day} yet, but it's coming soon!"
                 )
             else:
                 default_message = (
-                    message or f"Happy {day.capitalize()}, {target.profile.name}! "
-                            f"\U0001f389"
+                    message
+                    or f"Happy {day.capitalize()}, "
+                       f"{target.profile.name}! "
+                       f"\U0001f389"
                 )
-                unknown_message = f"I don't know {target.profile.name}'s {day}..."
+                unknown_message = (
+                    f"I don't know {target.profile.name}'s "
+                    f"{day}..."
+                )
                 not_today_message = (
-                    f"Today is not {target.profile.name}'s {day} yet, but it's "
-                    f"coming soon!"
+                    f"Today is not {target.profile.name}'s "
+                    f"{day} yet, but it's coming soon!"
                 )
         else:
             default_message = (
@@ -401,7 +427,10 @@ class Person:
                 self.say(f"• {task}...")
                 time.sleep(delay)
             if use_nickname and self.profile.nickname is not None:
-                self.say(f"{self.profile.nickname} has completed all the tasks.")
+                self.say(
+                    f"{self.profile.nickname} "
+                    "has completed all the tasks."
+                )
             else:
                 self.say(f"{self.profile.name} has completed all the tasks.")
     
