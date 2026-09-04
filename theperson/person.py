@@ -23,6 +23,7 @@ class Profile:
     nationality: str | None = None
     iq: int | float = 90
     hobbies: list[str] = field(default_factory=list)
+    nickname: str | None = None
 
     def change_name(self, name: str) -> None:
         """Changes person name.
@@ -94,7 +95,7 @@ class Person:
         self.goals = goals if goals is not None else Goals()
         self.inventory = inventory if inventory is not None else Inventory()
     
-    def greet(self, target: Person | None = None) -> None:
+    def greet(self, target: Person | None = None, use_nickname: bool = False) -> None:
         """Do a simple greeting and introduction.
 
         Args:
@@ -108,11 +109,27 @@ class Person:
             raise TypeError("'target' must be a Person or 'None'")
         
         if target is None:
-            self.say(f"Hello! My name is {self.profile.name}.")
+            if use_nickname and self.profile.nickname is not None:
+                self.say(f"Hello! My name is {self.profile.nickname}.")
+            else:
+                self.say(f"Hello! My name is {self.profile.name}.")
         else:
-            self.say(
-                f"Hello {target.profile.name}! My name is {self.profile.name}."
-            )
+            if use_nickname and self.profile.nickname is not None  and target.profile.nickname is not None:
+                self.say(
+                    f"Hello {target.profile.nickname}! My name is {self.profile.nickname}."
+                )
+            elif use_nickname and self.profile.nickname is not None and target.profile.nickname is None:
+                self.say(
+                    f"Hello {target.profile.name}! My name is {self.profile.nickname}."
+                )
+            elif use_nickname and self.profile.nickname is None and target.profile.nickname is not None:
+                self.say(
+                    f"Hello {target.profile.nickname}! My name is {self.profile.name}."
+                )
+            else:
+                self.say(
+                    f"Hello {target.profile.name}! My name is {self.profile.name}."
+                )
 
     @staticmethod
     def say(*things: object,
@@ -204,12 +221,15 @@ class Person:
             return False
         return self.profile.age >= 18
 
-    def introduce(self) -> None:
+    def introduce(self, use_nickname: bool = False) -> None:
         """Print a full self-introduction using the person's attributes."""
         parts = []
         
         if self.profile.name is not None:
-            parts.append(f"Hi, my name is {self.profile.name}.")
+            if use_nickname and self.profile.nickname is not None:
+                parts.append(f"Hi, my name is {self.profile.nickname}.")
+            else:
+                parts.append(f"Hi, my name is {self.profile.name}.")
         if self.profile.age is not None:
             parts.append(f"I am {self.profile.age} years old.")
         if self.profile.gender is not None:
@@ -227,7 +247,8 @@ class Person:
                   day: str = "birthday",
                   check_date: bool = True,
                   message: str | None = None,
-                  target: "Person | None" = None) -> None:
+                  target: "Person | None" = None,
+                  use_nickname: bool = False) -> None:
         """Celebrate a special day for self or another person.
 
         Args:
@@ -268,15 +289,26 @@ class Person:
         today = date.today()
         
         if target is not None:
-            default_message = (
-                message or f"Happy {day.capitalize()}, {target.profile.name}! "
-                           f"\U0001f389"
-            )
-            unknown_message = f"I don't know {target.profile.name}'s {day}..."
-            not_today_message = (
-                f"Today is not {target.profile.name}'s {day} yet, but it's "
-                f"coming soon!"
-            )
+            if use_nickname and target.profile.nickname is not None:
+                default_message = (
+                    message or f"Happy {day.capitalize()}, {target.profile.nickname}! "
+                            f"\U0001f389"
+                )
+                unknown_message = f"I don't know {target.profile.nickname}'s {day}..."
+                not_today_message = (
+                    f"Today is not {target.profile.nickname}'s {day} yet, but it's "
+                    f"coming soon!"
+                )
+            else:
+                default_message = (
+                    message or f"Happy {day.capitalize()}, {target.profile.name}! "
+                            f"\U0001f389"
+                )
+                unknown_message = f"I don't know {target.profile.name}'s {day}..."
+                not_today_message = (
+                    f"Today is not {target.profile.name}'s {day} yet, but it's "
+                    f"coming soon!"
+                )
         else:
             default_message = (
                     message or f"Happy {day.capitalize()} to me! \U0001f389"
@@ -315,7 +347,8 @@ class Person:
     
     def do_tasks(self,
                  tasks: str | list[str],
-                 durations: float | list[float]) -> None:
+                 durations: float | list[float],
+                 use_nickname: bool = False) -> None:
         """Work on the given tasks.
 
         The number of tasks should match the number of durations provided.
@@ -367,7 +400,10 @@ class Person:
             for task, delay in tasks_map.items():
                 self.say(f"• {task}...")
                 time.sleep(delay)
-            self.say(f"{self.profile.name} has completed all the tasks.")
+            if use_nickname and self.profile.nickname is not None:
+                self.say(f"{self.profile.nickname} has completed all the tasks.")
+            else:
+                self.say(f"{self.profile.name} has completed all the tasks.")
     
     @staticmethod
     def choose(iterable: Sequence[Any]) -> Any:
@@ -384,7 +420,7 @@ class Person:
         """
         return random.choice(iterable)
     
-    def compliment(self, target: Person) -> None:
+    def compliment(self, target: Person, use_nickname: bool = False) -> None:
         """Give a random compliment to another person.
 
         Args:
@@ -417,12 +453,18 @@ class Person:
             "{name}, you are always so helpful.",
             "{name}, you are so sweet.",
         ]
-        
-        self.say(
-            random.choice(compliments).format(
-                name=target.profile.name
+        if use_nickname and target.profile.nickname is not None:
+            self.say(
+                    random.choice(compliments).format(
+                        name=target.profile.nickname
+                    )
+            )    
+        else:
+            self.say(
+                random.choice(compliments).format(
+                    name=target.profile.name
+                )
             )
-        )
     
     @staticmethod
     def write(contents: object, file: IO[str]) -> None:

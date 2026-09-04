@@ -89,3 +89,18 @@ if __name__ == "__main__":
     )
     kdclll.introduce()
     kdclll.say("Hello everyone!")
+
+    lionelmessi =Person(
+        profile=Profile(
+            name="Lionel Messi",
+            gender="male",
+            hobbies=["Soccer"],
+            nickname="La Pulga"
+        ),
+        professional=Professional(
+            occupation="Soccer player",
+            skills=["Scoring", "Assisting"],
+        )
+    ) 
+    lionelmessi.introduce(use_nickname=True)
+    joe.greet(lionelmessi)
