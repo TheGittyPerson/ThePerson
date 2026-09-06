@@ -16,13 +16,14 @@ from .inventory import Inventory
 @dataclass
 class Profile:
     """Basic profile information for a person."""
-    
+
     name: str | None = None
     age: int | None = None
     gender: str | None = None
     nationality: str | None = None
     iq: int | float = 90
     hobbies: list[str] = field(default_factory=list)
+    nickname: str | None = None
 
     def change_name(self, name: str) -> None:
         """Changes person name.
@@ -44,7 +45,7 @@ class Profile:
 @dataclass
 class Physical:
     """Physical characteristics such as height, weight and appearance."""
-    
+
     height: float | None = None
     weight: float | None = None
     skin_tone: str | None = None
@@ -54,7 +55,7 @@ class Physical:
 @dataclass
 class Professional:
     """Professional/career information."""
-    
+
     occupation: str | None = None
     skills: list[str] = field(default_factory=list)
 
@@ -62,7 +63,7 @@ class Professional:
 @dataclass
 class LifeDates:
     """Store important life dates for a person."""
-    
+
     birthday_date: date | None = None
     married_date: date | None = None
     graduation_date: date | None = None
@@ -71,7 +72,7 @@ class LifeDates:
 
 class Person:
     """A class to represent a person."""
-    
+
     def __init__(self,
                  profile: Profile | None = None,
                  physical: Physical | None = None,
@@ -81,7 +82,7 @@ class Person:
                  goals: Goals | None = None,
                  inventory: Inventory | None = None, ) -> None:
         """Initialize the person's attributes."""
-        
+
         self.profile = profile if profile is not None else Profile()
         self.physical = physical if physical is not None else Physical()
         self.professional = (
@@ -93,8 +94,10 @@ class Person:
         self.mood = mood if mood is not None else Mood()
         self.goals = goals if goals is not None else Goals()
         self.inventory = inventory if inventory is not None else Inventory()
-    
-    def greet(self, target: Person | None = None) -> None:
+
+    def greet(self,
+            target: Person | None = None,
+            use_nickname: bool = False) -> None:
         """Do a simple greeting and introduction.
 
         Args:
@@ -106,13 +109,22 @@ class Person:
         """
         if target is not None and not isinstance(target, Person):
             raise TypeError("'target' must be a Person or 'None'")
-        
+
+        name = (
+            self.profile.name
+            if not use_nickname or self.profile.nickname is None
+            else self.profile.nickname
+        )
+
         if target is None:
-            self.say(f"Hello! My name is {self.profile.name}.")
+            self.say(f"Hello! My name is {name}.")
         else:
-            self.say(
-                f"Hello {target.profile.name}! My name is {self.profile.name}."
+            target_name = (
+                target.profile.name
+                if not use_nickname or target.profile.nickname is None
+                else target.profile.nickname
             )
+            self.say(f"Hello {target_name}! My name is {name}.")
 
     @staticmethod
     def say(*things: object,
@@ -142,20 +154,20 @@ class Person:
             )
         if repeat < 0:
             raise ValueError("'repeat' must be non-negative")
-        
+
         if isinstance(delay, bool) or not isinstance(delay, (int, float)):
             raise TypeError(
                 f"'delay' must be numeric, got {type(delay).__name__}"
             )
         if delay < 0:
             raise ValueError("'delay' must be non-negative")
-        
+
         delay_seconds = float(delay)
         for index in range(repeat):
             print(*things, sep=sep, end=end, flush=flush)
             if index < repeat - 1 and delay_seconds > 0:
                 time.sleep(delay_seconds)
-    
+
     @staticmethod
     def wave() -> None:
         """Wave a hand to greet or bid farewell.
@@ -163,7 +175,7 @@ class Person:
         This method prints a waving hand emoji to represent a wave.
         """
         print("\U0001f44b")  # Unicode for waving hand emoji
-    
+
     @staticmethod
     def cry(emoji_type: str | None = None) -> None:
         """Cry with a crying emoji.
@@ -185,13 +197,13 @@ class Person:
             "smile": "\U0001f972",  # 🥲 smiling face with tear
             "sad": "\U0001f622",  # 😢 crying face
         }
-        
+
         emoji = crying_emojis.get(
             # Stringify to comply with type hint when 'emoji_type' is None
             str(emoji_type), random.choice(list(crying_emojis.values()))
         )
         print(emoji)
-    
+
     @property
     def is_adult(self) -> bool:
         """Check if the person is an adult (18 years or older).
@@ -204,12 +216,15 @@ class Person:
             return False
         return self.profile.age >= 18
 
-    def introduce(self) -> None:
+    def introduce(self, use_nickname: bool = False) -> None:
         """Print a full self-introduction using the person's attributes."""
         parts = []
-        
+
         if self.profile.name is not None:
-            parts.append(f"Hi, my name is {self.profile.name}.")
+            if use_nickname and self.profile.nickname is not None:
+                parts.append(f"Hi, my name is {self.profile.nickname}.")
+            else:
+                parts.append(f"Hi, my name is {self.profile.name}.")
         if self.profile.age is not None:
             parts.append(f"I am {self.profile.age} years old.")
         if self.profile.gender is not None:
@@ -220,14 +235,15 @@ class Person:
             parts.append(f"I am from {self.profile.nationality}.")
         if self.professional.occupation is not None:
             parts.append(f"I work as a {self.professional.occupation}.")
-        
+
         self.say(*parts, sep="\n")
-    
+
     def celebrate(self,
                   day: str = "birthday",
                   check_date: bool = True,
                   message: str | None = None,
-                  target: "Person | None" = None) -> None:
+                  target: "Person | None" = None,
+                  use_nickname: bool = False) -> None:
         """Celebrate a special day for self or another person.
 
         Args:
@@ -238,45 +254,67 @@ class Person:
             message: A custom message to print. If None, a default message
                      is used.
             target: Another Person to celebrate. If None, celebrates self.
+            use_nickname: Whether to use nickname instead of actual name.
 
         Raises:
             AttributeError: If the celebration day attribute does not exist.
             TypeError: If the celebration date attribute is not a date.
         """
-        
+
         if not isinstance(day, str):
             raise TypeError(f"'day' must be a string, got {type(day).__name__}")
-        
+
         person = target if target is not None else self
         attr = f"{day}_date"
-        
+
         if not hasattr(person.life_dates, attr):
             raise AttributeError(
                 f"'{day}' is not a recognised celebration "
                 f"(could not find attribute '{attr}')"
             )
-        
+
         celebration_date: date | None = getattr(person, attr)
-        
+
         if (celebration_date is not None
                 and not isinstance(celebration_date, date)):
             raise TypeError(
                 f"'{attr}' must be a date or None, "
                 f"got {type(celebration_date).__name__}"
             )
-        
+
         today = date.today()
-        
+
         if target is not None:
-            default_message = (
-                message or f"Happy {day.capitalize()}, {target.profile.name}! "
+            if use_nickname and target.profile.nickname is not None:
+                default_message = (
+                        message
+                        or f"Happy {day.capitalize()}, "
+                           f"{target.profile.nickname}! "
                            f"\U0001f389"
-            )
-            unknown_message = f"I don't know {target.profile.name}'s {day}..."
-            not_today_message = (
-                f"Today is not {target.profile.name}'s {day} yet, but it's "
-                f"coming soon!"
-            )
+                )
+                unknown_message = (
+                    f"I don't know {target.profile.nickname}'s "
+                    f"{day}..."
+                )
+                not_today_message = (
+                    f"Today is not {target.profile.nickname}'s "
+                    f"{day} yet, but it's coming soon!"
+                )
+            else:
+                default_message = (
+                        message
+                        or f"Happy {day.capitalize()}, "
+                           f"{target.profile.name}! "
+                           f"\U0001f389"
+                )
+                unknown_message = (
+                    f"I don't know {target.profile.name}'s "
+                    f"{day}..."
+                )
+                not_today_message = (
+                    f"Today is not {target.profile.name}'s "
+                    f"{day} yet, but it's coming soon!"
+                )
         else:
             default_message = (
                     message or f"Happy {day.capitalize()} to me! \U0001f389"
@@ -285,7 +323,7 @@ class Person:
             not_today_message = (
                 f"Today is not my {day} yet, but it's coming soon!"
             )
-        
+
         if check_date:
             if celebration_date is None:
                 self.say(unknown_message)
@@ -298,7 +336,7 @@ class Person:
                 self.say(not_today_message)
         else:
             self.say(default_message)
-    
+
     def existential_crisis(self) -> None:
         """Say a random existential crisis message."""
         messages = [
@@ -310,12 +348,13 @@ class Person:
             "WHO AM I???",
             "What if I'm just a simulated person living in a Python script???"
         ]
-        
+
         self.say(random.choice(messages))
-    
+
     def do_tasks(self,
                  tasks: str | list[str],
-                 durations: float | list[float]) -> None:
+                 durations: float | list[float],
+                 use_nickname: bool = False) -> None:
         """Work on the given tasks.
 
         The number of tasks should match the number of durations provided.
@@ -329,6 +368,7 @@ class Person:
                 one task is to be provided.
             durations (float | list[float]):
                 Duration in seconds to complete each task.
+            use_nickname: Whether to use nickname instead of actual name.
 
         Raises:
             TypeError:
@@ -342,23 +382,23 @@ class Person:
             tasks: list = [tasks]
         elif not isinstance(tasks, list):
             raise TypeError("'tasks' must be a string or a list of strings")
-        
+
         if not all(isinstance(task, str) for task in tasks):
             raise TypeError("All tasks must be strings")
-        
+
         if isinstance(durations, float):
             durations: list = [durations] * len(tasks)
         elif not isinstance(durations, list):
             raise TypeError("'durations' must be a float or a list of floats")
-        
+
         if not all(isinstance(duration, float) for duration in durations):
             raise TypeError("All 'durations' must be a float")
-        
+
         if len(tasks) != len(durations):
             raise ValueError(
                 "The number of tasks and durations must match"
             )
-        
+
         if len(tasks) == 0:
             self.say("No tasks provided.")
         else:
@@ -367,8 +407,14 @@ class Person:
             for task, delay in tasks_map.items():
                 self.say(f"• {task}...")
                 time.sleep(delay)
-            self.say(f"{self.profile.name} has completed all the tasks.")
-    
+            if use_nickname and self.profile.nickname is not None:
+                self.say(
+                    f"{self.profile.nickname} "
+                    "has completed all the tasks."
+                )
+            else:
+                self.say(f"{self.profile.name} has completed all the tasks.")
+
     @staticmethod
     def choose(iterable: Sequence[Any]) -> Any:
         """Choose and return a random element from the given sequence.
@@ -383,12 +429,13 @@ class Person:
             IndexError: If the sequence is empty.
         """
         return random.choice(iterable)
-    
-    def compliment(self, target: Person) -> None:
+
+    def compliment(self, target: Person, use_nickname: bool = False) -> None:
         """Give a random compliment to another person.
 
         Args:
             target (Person): The person receiving the compliment.
+            use_nickname: Whether to use nickname instead of actual name.
 
         Raises:
             TypeError: If target is not a Person instance.
@@ -398,12 +445,12 @@ class Person:
             raise TypeError(
                 f"'target' must be a Person, got {type(target).__name__}"
             )
-        
+
         if target.profile.name is None:
             raise ValueError(
                 "'target' must have a name to receive a compliment"
             )
-        
+
         compliments = [
             "{name}, I brag to all my friends about you.",
             "{name}, you are more fun than anyone I know.",
@@ -417,13 +464,19 @@ class Person:
             "{name}, you are always so helpful.",
             "{name}, you are so sweet.",
         ]
-        
-        self.say(
-            random.choice(compliments).format(
-                name=target.profile.name
+        if use_nickname and target.profile.nickname is not None:
+            self.say(
+                random.choice(compliments).format(
+                    name=target.profile.nickname
+                )
             )
-        )
-    
+        else:
+            self.say(
+                random.choice(compliments).format(
+                    name=target.profile.name
+                )
+            )
+
     @staticmethod
     def write(contents: object, file: IO[str]) -> None:
         """Write contents to a text file-like object.
@@ -436,15 +489,15 @@ class Person:
             TypeError: If file has no callable write method.
         """
         write_method = getattr(file, "write", None)
-        
+
         if write_method is None or not callable(write_method):
             raise TypeError(
                 "file must be a writable object with a write(str) method, "
                 f"got {type(file).__name__}"
             )
-        
+
         file.write(str(contents))
-    
+
     @staticmethod
     def smile(smile_type: str | None = None) -> None:
         """Shows a smiling or grinning face.
@@ -463,17 +516,17 @@ class Person:
             "grin": "\U0001F601",  # 😁 grinning face with smiling eyes
             "wide": "\U0001F604",  # 😄 open mouth with smiling eyes
         }
-        
+
         if smile_type is not None and not isinstance(smile_type, str):
             raise TypeError(
                 "'smile_type' must be a str or None, "
                 f"got {type(smile_type).__name__}"
             )
-        
+
         smiley = smiling_emojis.get(
             str(smile_type), random.choice(list(smiling_emojis.values()))
         )
-        
+
         print(smiley)
 
     @staticmethod
@@ -506,7 +559,7 @@ class Person:
         )
 
         print(emoji)
-    
+
     def age_up(self,
                increment: int = 1,
                height_increment: float | None = None,
@@ -528,7 +581,7 @@ class Person:
         """
         today = date.today()
         birthday = self.life_dates.birthday_date
-        
+
         if self.profile.age is None:
             raise ValueError("Cannot increment, age is not set")
         if check_birthday:
@@ -579,8 +632,8 @@ class Person:
             raise TypeError("Difficulty must be an float or int.")
         if difficulty < 1 or difficulty > 5:
             raise ValueError("Provide difficulty on scale of 1 to 5.")
-        
-        iq_gain = difficulty * 0.5 
+
+        iq_gain = difficulty * 0.5
 
         self.increase_iq(iq_gain)
 
