@@ -96,17 +96,13 @@ class Person:
         self.inventory = inventory if inventory is not None else Inventory()
 
     def greet(self,
-              target: Person | None = None,
-              use_nickname: bool = False) -> None:
+            target: Person | None = None,
+            use_nickname: bool = False) -> None:
         """Do a simple greeting and introduction.
 
         Args:
-            target:
-                Optional Person to greet. If provided, the greeting
-                will include the target person's name.
-            use_nickname:
-                Whether to use the target person's nickname instead
-                of their actual name.
+            target: Optional Person to greet. If provided, the greeting
+            will include the target person's name.
 
         Raises:
             TypeError: If target is not a Person or None.
@@ -114,41 +110,21 @@ class Person:
         if target is not None and not isinstance(target, Person):
             raise TypeError("'target' must be a Person or 'None'")
 
+        name = (
+            self.profile.name
+            if not use_nickname or self.profile.nickname is None
+            else self.profile.nickname
+        )
+
         if target is None:
-            if use_nickname and self.profile.nickname is not None:
-                self.say(f"Hello! My name is {self.profile.nickname}.")
-            else:
-                self.say(f"Hello! My name is {self.profile.name}.")
+            self.say(f"Hello! My name is {name}.")
         else:
-            if (
-                    use_nickname
-                    and self.profile.nickname is not None
-                    and target.profile.nickname is not None):
-                self.say(
-                    f"Hello {target.profile.nickname}! "
-                    f"My name is {self.profile.nickname}."
-                )
-            elif (
-                    use_nickname
-                    and self.profile.nickname is not None
-                    and target.profile.nickname is None):
-                self.say(
-                    f"Hello {target.profile.name}! "
-                    f"My name is {self.profile.nickname}."
-                )
-            elif (
-                    use_nickname
-                    and self.profile.nickname is None
-                    and target.profile.nickname is not None):
-                self.say(
-                    f"Hello {target.profile.nickname}! "
-                    f"My name is {self.profile.name}."
-                )
-            else:
-                self.say(
-                    f"Hello {target.profile.name}! "
-                    f"My name is {self.profile.name}."
-                )
+            target_name = (
+                target.profile.name
+                if not use_nickname or target.profile.nickname is None
+                else target.profile.nickname
+            )
+            self.say(f"Hello {target_name}! My name is {name}.")
 
     @staticmethod
     def say(*things: object,
