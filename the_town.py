@@ -110,3 +110,16 @@ if __name__ == "__main__":
     print(lionelmessi.recall())
     lionelmessi.forget()
     print(lionelmessi.recall())
+
+    leonor = Person(
+        profile=Profile(
+            name="Léonor",
+            gender="female",
+            hobbies=["Reading", "Science", "Music"],
+        ),
+        professional=Professional(
+            occupation="Student"
+        ),
+    )
+    leonor.introduce()
+    leonor.goals.add_goal("Make my first GitHub contribution")
